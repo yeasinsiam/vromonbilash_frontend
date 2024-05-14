@@ -1,11 +1,32 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import fullLogoImage from "@/assets/static/media/vb.logo.svg";
 import shortLogoImage from "@/assets/static/media/vb.short-logo.png";
 import avatarImage from "@/assets/static/media/avatar.jpg";
 import Link from "next/link";
+import DropdownMenu from "./DropdownMenu";
 
 export default function Header() {
+  const [isStickyHeader, setIsStickyHeader] = useState(false);
+  const [showUserFullName, setShowUserFullName] = useState(false);
+
+  useEffect(() => {
+    const handleSetStickyHeader = () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 150) {
+        setIsStickyHeader(true);
+      } else {
+        setIsStickyHeader(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleSetStickyHeader);
+
+    return () => {
+      window.removeEventListener("scroll", handleSetStickyHeader);
+    };
+  }, []);
+
   return (
     <>
       <header>
@@ -28,21 +49,32 @@ export default function Header() {
               <div className="col-6 col-md-4 col-lg-4">
                 <div className="header_main_logo text-center">
                   <a href="index.html">
-                    <Image src={fullLogoImage} alt="vromonbilash" />
+                    <Image
+                      src={fullLogoImage}
+                      alt="vromonbilash"
+                      style={{ height: "auto" }}
+                    />
                   </a>
                 </div>
               </div>
               <div className="col-6 col-md-4 col-lg-4">
                 <div className="userAccount_wrapper d-flex justify-content-end align-items-center">
                   <div className="userProfile">
-                    <div className="navigation">
+                    <div
+                      className={`navigation ${
+                        showUserFullName ? "active" : ""
+                      }`}
+                    >
                       <div className="user-box">
                         <div className="image-box">
                           <Image src={avatarImage} alt="avatar" />
                         </div>
                         <p className="username">Yeasin Rahman Siam</p>
                       </div>
-                      <div className="menu-toggle" />
+                      <div
+                        className="menu-toggle"
+                        onClick={() => setShowUserFullName(!showUserFullName)}
+                      />
                       <ul className="menu">
                         <li>
                           <a href="#">
@@ -106,7 +138,7 @@ export default function Header() {
             </div>
           </div>
           {/* ================= Header Main Html Code Start Here ================== */}
-          <div className="mainheader">
+          <div className={`mainheader ${isStickyHeader ? "is-sticky" : ""} `}>
             <div className="container">
               <div className="row">
                 <div className="col-lg">
@@ -132,39 +164,7 @@ export default function Header() {
                       <li className="nav-link">
                         <a href="#">Resorts</a>
                       </li>
-                      <li className="nav-link dropdown_c dropdown_hover">
-                        <a href="#">
-                          Pages{" "}
-                          <span>
-                            <i className="fa-solid fa-angles-down" />
-                          </span>{" "}
-                        </a>
-                        <div className="drop-content">
-                          <ul className="drop-hover">
-                            <li>
-                              <a href="#">Resorts List</a>
-                            </li>
-                            <li>
-                              <a href="#">Packages List</a>
-                            </li>
-                            <li>
-                              <a href="#">How To Payment</a>
-                            </li>
-                            <li>
-                              <a href="#">Help</a>
-                            </li>
-                            <li>
-                              <a href="#">FAQ</a>
-                            </li>
-                            <li>
-                              <a href="#">Privacy Policy</a>
-                            </li>
-                            <li>
-                              <a href="#">Terms &amp; Condition</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
+                      <DropdownMenu />
                       <li className="nav-link">
                         <a href="destination.html">Destination</a>
                       </li>

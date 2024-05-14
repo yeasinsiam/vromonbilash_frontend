@@ -1,7 +1,9 @@
 import Image from "next/image";
 import offerImageJpg from "@/assets/static/media/offer_img.jpg";
+import { useState } from "react";
 
 export default function HomeBannerSection() {
+  const [openVideo, setOpenVideo] = useState(false);
   return (
     <section className="mainHeading">
       <video
@@ -32,16 +34,32 @@ export default function HomeBannerSection() {
                   countries Vokalia and Consonantia, there live the blind texts.
                 </p>
                 <button className="cta">Discover Now</button>
-                <a
+                <span
                   id="play-video"
                   className="video-play-button"
-                  href="#"
                   title="Watch our story"
+                  onClick={() => setOpenVideo(true)}
                 >
                   <span />
-                </a>
-                <div id="video-overlay" className="video-overlay">
-                  <a className="video-overlay-close">×</a>
+                </span>
+                <div
+                  id="video-overlay"
+                  className={`video-overlay ${openVideo ? "open" : ""}`}
+                >
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/TF22bgokALk?si=mb3nrSwbykMpzi9E"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay=1; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                  <span
+                    onClick={() => setOpenVideo(false)}
+                    className="video-overlay-close"
+                  >
+                    ×
+                  </span>
                 </div>
               </article>
               <figure className="mainHeading__image">

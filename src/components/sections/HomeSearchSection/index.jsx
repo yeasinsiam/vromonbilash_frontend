@@ -2,7 +2,11 @@ import Image from "next/image";
 import searchGif from "@/assets/static/media/search.gif";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import SelectField from "../form-fields/SelectField";
+import LocationField from "./LocationField";
+import ResortGuestAndRoomsField from "./ResortGuestAndRoomsField";
+// import { DateRangePicker } from "react-date-range";
+// import DateRangePicker from "react-daterange-picker";
+import CheckInCheckOutField from "./CheckInCheckOutField";
 
 export default function HomeSearchSection() {
   const [activeTab, setActiveTab] = useState("resort"); //[ resort | package ]
@@ -75,87 +79,15 @@ export default function HomeSearchSection() {
                                   <div className="input_form_style">
                                     <label htmlFor="">Location</label>
                                     <div className="main">
-                                      <SelectField />
-                                      {/* <select name="" className="form_select">
-                                        <option value={1}>
-                                          {" "}
-                                          San Jacinto, USA
-                                        </option>
-                                        <option value={2}>
-                                          Dhaka, Bangladesh
-                                        </option>
-                                        <option value={3}>Jacinto, USA</option>
-                                        <option value={4}>
-                                          {" "}
-                                          San Jacinto, USA
-                                        </option>
-                                      </select> */}
+                                      <LocationField />
                                     </div>
                                   </div>
                                 </div>
                                 <div className="col-md-5 col-lg-3">
-                                  <div className="input_form_style">
-                                    <label htmlFor="">Check in - Out</label>
-                                    <input name="range" id="cal" />
-                                  </div>
+                                  <CheckInCheckOutField />
                                 </div>
                                 <div className="col-md-5 col-lg-3">
-                                  <div className="input_form_style">
-                                    <label htmlFor="">Guests &amp; Rooms</label>
-                                    <div className="booking-form__input guests-input">
-                                      <button
-                                        name="guests-btn"
-                                        id="guests-input-btn"
-                                      >
-                                        1 guest
-                                      </button>
-                                      <div
-                                        className="guests-input__options"
-                                        id="guests-input-options"
-                                      >
-                                        <div>
-                                          <span
-                                            className="guests-input__ctrl minus"
-                                            id="adults-subs-btn"
-                                          >
-                                            <i className="fa-solid fa-minus" />
-                                          </span>
-                                          <span className="guests-input__value">
-                                            <span id="guests-count-adults">
-                                              1
-                                            </span>
-                                            Adults
-                                          </span>
-                                          <span
-                                            className="guests-input__ctrl plus"
-                                            id="adults-add-btn"
-                                          >
-                                            <i className="fa-solid fa-plus" />
-                                          </span>
-                                        </div>
-                                        <div>
-                                          <span
-                                            className="guests-input__ctrl minus"
-                                            id="children-subs-btn"
-                                          >
-                                            <i className="fa-solid fa-minus" />
-                                          </span>
-                                          <span className="guests-input__value">
-                                            <span id="guests-count-children">
-                                              0
-                                            </span>
-                                            Children
-                                          </span>
-                                          <span
-                                            className="guests-input__ctrl plus"
-                                            id="children-add-btn"
-                                          >
-                                            <i className="fa-solid fa-plus" />
-                                          </span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
+                                  <ResortGuestAndRoomsField />
                                 </div>
                                 <div className="col-md-2 col-lg-2">
                                   <button
@@ -186,23 +118,7 @@ export default function HomeSearchSection() {
                                   <div className="input_form_style">
                                     <label htmlFor="">Location</label>
                                     <div className="main">
-                                      <select
-                                        name="form_select"
-                                        className="form_select"
-                                      >
-                                        <option value={1}>
-                                          {" "}
-                                          San Jacinto, USA
-                                        </option>
-                                        <option value={2}>
-                                          Dhaka, Bangladesh
-                                        </option>
-                                        <option value={3}>Jacinto, USA</option>
-                                        <option value={4}>
-                                          {" "}
-                                          San Jacinto, USA
-                                        </option>
-                                      </select>
+                                      <LocationField />
                                     </div>
                                   </div>
                                 </div>
@@ -210,20 +126,7 @@ export default function HomeSearchSection() {
                                   <div className="input_form_style">
                                     <label htmlFor="">Package Type</label>
                                     <div className="main">
-                                      <select name="" className="form_select">
-                                        <option value={1}>
-                                          {" "}
-                                          San Jacinto, USA
-                                        </option>
-                                        <option value={2}>
-                                          Dhaka, Bangladesh
-                                        </option>
-                                        <option value={3}>Jacinto, USA</option>
-                                        <option value={4}>
-                                          {" "}
-                                          San Jacinto, USA
-                                        </option>
-                                      </select>
+                                      <LocationField />
                                     </div>
                                   </div>
                                 </div>

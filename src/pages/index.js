@@ -6,12 +6,15 @@ import QuickServicesSection from "@/components/sections/QuickServicesSection";
 import AboutSection from "@/components/sections/AboutSection";
 import HomeBannerSection from "@/components/sections/HomeBannerSection";
 import HomeSearchSection from "@/components/sections/HomeSearchSection";
+import HomeBannerRightFroMobileDevice from "@/components/sections/HomeBannerRightFroMobileDevice";
 
 export default function HomePage() {
   return (
     <HomeLayout>
       <HomeBannerSection />
       <HomeSearchSection />
+      {/* Banner Right Image For Mobile Device */}
+      <HomeBannerRightFroMobileDevice />
       {/* Border Starts */}
       <div className="container section_line">
         <div className="row">

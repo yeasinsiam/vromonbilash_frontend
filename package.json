@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "6.5.1",
-    "daterangepicker": "3.1.0",
     "framer-motion": "^11.1.9",
+    "moment": "2.22.1",
+    "moment-range": "4.0.1",
     "next": "14.2.3",
     "react": "^18",
+    "react-daterange-picker": "2.0.0",
     "react-dom": "^18"
   },
   "devDependencies": {

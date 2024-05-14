@@ -715,6 +715,7 @@ select {
   -webkit-transition: all 0.1s linear;
   transition: all 0.1s linear;
   z-index: 1;
+  margin-top: 4px;
 }
 
 .guests-input__options.open {
@@ -1582,3 +1583,27 @@ select {
 
 /* ================= Breadcrumb Style Css End ================== */
 /* =================== Other Page's Style Css End =================== */
+
+.home-search-checkin-checkout-calender {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 99;
+  padding-top: 4px;
+}
+.home-search-checkin-checkout-calender .DateRangePicker {
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .home-search-checkin-checkout-calender .DateRangePicker {
+    display: flex;
+    flex-direction: row;
+    max-width: 600px;
+  }
+}
