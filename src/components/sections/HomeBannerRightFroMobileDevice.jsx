@@ -8,7 +8,11 @@ export default function HomeBannerRightFroMobileDevice() {
       <div className="row">
         <div className="col-lg">
           <figure className="banner_right__image d-block  d-md-none">
-            <Image src={offerImageJpg} alt="Offer image" />
+            <Image
+              src={offerImageJpg}
+              alt="Offer image"
+              style={{ height: "auto" }}
+            />
 
             <div className="banner_image_features_mbl">
               <span>

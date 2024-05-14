@@ -519,6 +519,7 @@ select {
   max-height: 250px;
   overflow: auto;
   border: 1px solid #ddd;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
 }
 
 .dropdown-select .list:hover .option:not(:hover) {
@@ -1584,7 +1585,7 @@ select {
 /* ================= Breadcrumb Style Css End ================== */
 /* =================== Other Page's Style Css End =================== */
 
-.home-search-checkin-checkout-calender {
+/* .home-search-checkin-checkout-calender {
   position: absolute;
   top: 100%;
   left: 0;
@@ -1606,4 +1607,20 @@ select {
     flex-direction: row;
     max-width: 600px;
   }
+} */
+.home-search-checkin-checkout-calender {
+  padding: 0px 10px;
+  padding-top: 0px;
+  width: fit-content;
+  border-radius: 10px;
+  border: 1.5px solid #ddd;
+  position: absolute;
+  z-index: 9;
+  margin-top: 4px;
+  background-color: #fff;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
+}
+
+.rdrDayToday .rdrDayNumber span::after {
+  background-color: #312783 !important;
 }

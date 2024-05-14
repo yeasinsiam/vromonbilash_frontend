@@ -1,22 +1,22 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import DateRangePicker from "react-daterange-picker";
-import originalMoment from "moment";
-import { extendMoment } from "moment-range";
-const moment = extendMoment(originalMoment);
+import { DateRange } from "react-date-range";
+import moment from "moment";
 
 export default function CheckInCheckOutField() {
   const inputRef = useRef(null);
   const dropdownRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [dateRange, setDateRange] = useState([
+    {
+      startDate: moment().format(),
+      endDate: moment().add(7, "day").format(),
+      key: "selection",
+    },
+  ]);
 
-  const today = moment();
-  const [selectedDateRange, setSelectedDateRange] = useState(
-    moment.range(today.clone().subtract(7, "days"), today.clone())
-  );
-
-  console.log(selectedDateRange);
-  //   show if click on input
+  // show if click on input
   useEffect(() => {
     if (inputRef.current) {
       const inputElement = inputRef.current;
@@ -59,37 +59,63 @@ export default function CheckInCheckOutField() {
     }
   }, [inputRef, dropdownRef, showDropdown]);
 
+  //   check if mobile device
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Add event listener to handle window resize
+    window.addEventListener("resize", handleResize);
+
+    // Initial check when the component mounts
+    handleResize();
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  console.log();
+
   return (
-    <div className="input_form_style position-relative">
-      <label htmlFor="">Check in - Out</label>
-      <input ref={inputRef} />
+    <div className="position-relative">
+      <div className="input_form_style ">
+        <label htmlFor="">Check in - Out</label>
+        <input
+          ref={inputRef}
+          value={`${moment(dateRange[0].startDate).format(
+            "DD/MM/YYYY"
+          )} - ${moment(dateRange[0].endDate).format("DD/MM/YYYY")}`}
+          readOnly
+        />
+      </div>
+
       {showDropdown ? (
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={"home-search-checkout-checkin-calender"}
-            // initial={{ opacity: 0 }}
-            // animate={{ opacity: 1 }}
-            // exit={{ opacity: 0 }}
-            // transition={{ duration: 0.2 }}
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -10, opacity: 0 }}
-            transition={{ duration: 0.2 }}
+        <motion.div
+          key={"home-search-checkout-checkin-calender"}
+          initial={{ y: 10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -10, opacity: 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          <div
+            ref={dropdownRef}
+            className="home-search-checkin-checkout-calender"
           >
-            <div
-              ref={dropdownRef}
-              className="home-search-checkin-checkout-calender"
-            >
-              working on it
-              {/* <DateRangePicker
-                numberOfCalendars={2}
-                onSelect={(value, states) => {
-                  setSelectedDateRange(value);
-                }}
-              /> */}
-            </div>
-          </motion.div>
-        </AnimatePresence>
+            <DateRange
+              onChange={(item) => setDateRange([item.selection])}
+              showSelectionPreview={false}
+              moveRangeOnFirstSelection={false}
+              months={2}
+              ranges={dateRange}
+              direction={isMobile ? "vertical" : "horizontal"}
+              showDateDisplay={false}
+              rangeColors={["#312783"]}
+            />
+          </div>
+        </motion.div>
       ) : (
         ""
       )}

@@ -7,14 +7,15 @@ export default function HomeBannerSection() {
   return (
     <section className="mainHeading">
       <video
-        poster="/static/media/Multipurpose travel and tour booking.mp4"
         playsInline
         autoPlay
         muted
         loop
         preload="none"
+        poster="/static/media/Multipurpose travel and tour booking.jpg"
       >
         <source
+          // src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4"
           src="/static/media/Multipurpose travel and tour booking.mp4"
           type="video/mp4"
         />
