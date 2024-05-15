@@ -14,7 +14,6 @@ export default function AboutPage() {
     },
   ]);
 
-  console.log(state);
   return (
     <div>
       <Link href="/">Home</Link>

@@ -10,36 +10,13 @@ export default function AboutSection() {
         <div className="container">
           <div className="row">
             <div className="col-lg-6 col-xl-5">
-              {/*  */}
-              {/*  */}
-              {/*  */}
-              {/* skeleton showing */}
-              {/* <div className="c-item">
-                <div className="c-item__top">
-                  <div className="c-skeleton-square" />
-                </div>
-                <div className="c-item__center">
-                  <h3>
-                    <div className="c-skeleton-line" />
-                    <div className="c-skeleton-line" />
-                  </h3>
-                </div>
-                <div className="c-item__bottom">
-                  <div className="c-skeleton-line" />
-                  <div className="c-skeleton-line" />
-                </div>
-                <div className="c-item__add">
-                  <div className="c-skeleton-square" />
-                </div>
-              </div> */}
-              {/* skeleton ending */}
-              {/*  */}
-              {/*  */}
-              {/*  */}
-
-              <div className="vb_about_banner">
-                <ThemeImage />
-              </div>
+              {/* <div className="vb_about_banner"> */}
+              <ThemeImage
+                src={aboutBannerThreePng}
+                height="500"
+                alt="About vromonbilash banner"
+              />
+              {/* </div> */}
             </div>
             <div className="col-lg-6 col-xl-7">
               <div className="dqfh_right_contents">

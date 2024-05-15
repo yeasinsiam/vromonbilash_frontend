@@ -1,6 +1,9 @@
 import quickServiceBannerJpg from "@/assets/static/media/quick-service-banner.jpg";
 import starPng from "@/assets/static/media/star.png";
 import Image from "next/image";
+import ThemeImage from "../theme/ThemeImage";
+import { faUtensils } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function QuickServicesSection() {
   return (
@@ -9,10 +12,15 @@ export default function QuickServicesSection() {
         <div className="row">
           <div className="col-lg-5">
             <div className="qsfh_left_img">
-              <Image
+              {/* <Image
                 src={quickServiceBannerJpg}
                 alt="Quick Service Banner"
                 style={{ width: "100%", height: "auto" }}
+              /> */}
+              <ThemeImage
+                src={quickServiceBannerJpg}
+                height={600}
+                alt="Quick Service Banner"
               />
               <div className="spin_star_animation">
                 <div>
@@ -36,7 +44,8 @@ export default function QuickServicesSection() {
                 <div className="qsfh_icon_item">
                   <div className="qsfh_icon">
                     <span>
-                      <i className="fa-solid fa-utensils" />
+                      {/* <i className="fa-solid fa-utensils" /> */}
+                      <FontAwesomeIcon icon={faUtensils} />
                     </span>
                   </div>
                   <div className="qsfh_content">
@@ -52,7 +61,8 @@ export default function QuickServicesSection() {
                 <div className="qsfh_icon_item">
                   <div className="qsfh_icon iconbg_2">
                     <span>
-                      <i className="fa-solid fa-utensils" />
+                      {/* <i className="fa-solid fa-utensils" /> */}
+                      <FontAwesomeIcon icon={faUtensils} />
                     </span>
                   </div>
                   <div className="qsfh_content">
@@ -68,7 +78,8 @@ export default function QuickServicesSection() {
                 <div className="qsfh_icon_item">
                   <div className="qsfh_icon iconbg_3">
                     <span>
-                      <i className="fa-solid fa-utensils" />
+                      {/* <i className="fa-solid fa-utensils" /> */}
+                      <FontAwesomeIcon icon={faUtensils} />
                     </span>
                   </div>
                   <div className="qsfh_content">
@@ -84,7 +95,8 @@ export default function QuickServicesSection() {
                 <div className="qsfh_icon_item">
                   <div className="qsfh_icon iconbg_4">
                     <span>
-                      <i className="fa-solid fa-utensils" />
+                      {/* <i className="fa-solid fa-utensils" /> */}
+                      <FontAwesomeIcon icon={faUtensils} />
                     </span>
                   </div>
                   <div className="qsfh_content">

@@ -10,7 +10,7 @@ import "@/assets/styles/vb.responsive.css";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 // import "react-loading-skeleton/dist/skeleton.css";
-import "@/assets/styles/skeletons.css";
+import "@/assets/styles/skeletons-loading.css";
 
 // Fonts
 const pacificoRegularFont = localFont({

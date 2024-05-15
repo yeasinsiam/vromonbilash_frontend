@@ -2,6 +2,11 @@ import Image from "next/image";
 import googlePlaySvg from "@/assets/static/media/google-play.svg";
 import appStoreSvg from "@/assets/static/media/app-store.svg";
 import backgroundPng from "@/assets/static/media/d_bg.png";
+import {
+  faHandHoldingDollar,
+  faHandHoldingHeart,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function DownloadAppSection() {
   return (
@@ -40,7 +45,8 @@ export default function DownloadAppSection() {
             <div className="download_app_item d-flex align-items-center">
               <div className="dai_icon">
                 <span>
-                  <i className="fa-solid fa-hand-holding-heart" />
+                  {/* <i className="fa-solid fa-hand-holding-heart" /> */}
+                  <FontAwesomeIcon icon={faHandHoldingHeart} />
                 </span>
               </div>
               <div className="dai_content">
@@ -55,7 +61,8 @@ export default function DownloadAppSection() {
             <div className="download_app_item d-flex align-items-center">
               <div className="dai_icon">
                 <span>
-                  <i className="fa-solid fa-hand-holding-dollar" />
+                  {/* <i className="fa-solid fa-hand-holding-dollar" /> */}
+                  <FontAwesomeIcon icon={faHandHoldingDollar} />
                 </span>
               </div>
               <div className="dai_content">

@@ -77,10 +77,8 @@ export default function CheckInCheckOutField() {
     };
   }, []);
 
-  console.log();
-
   return (
-    <div className="position-relative">
+    <div className="position-relative" style={{ zIndex: "10" }}>
       <div className="input_form_style ">
         <label htmlFor="">Check in - Out</label>
         <input

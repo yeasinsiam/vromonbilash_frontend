@@ -64,6 +64,7 @@ export default function Header() {
                       src={fullLogoImage}
                       alt="vromonbilash"
                       style={{ height: "auto" }}
+                      priority
                     />
                   </Link>
                 </div>

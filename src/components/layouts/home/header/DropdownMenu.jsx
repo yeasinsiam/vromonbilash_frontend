@@ -1,3 +1,8 @@
+import {
+  faAngleDoubleDown,
+  faAngleDown,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 
@@ -12,7 +17,8 @@ export default function DropdownMenu() {
       <a href="#">
         Pages{" "}
         <span>
-          <i className="fa-solid fa-angles-down" />
+          {/* <i className="fa-solid fa-angles-down" /> */}
+          <FontAwesomeIcon icon={faAngleDoubleDown} />
         </span>{" "}
       </a>
       <div className="drop-content">
