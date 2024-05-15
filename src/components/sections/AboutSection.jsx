@@ -1,5 +1,7 @@
-import Image from "next/image";
 import aboutBannerThreePng from "@/assets/static/media/about-banner-three.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import ThemeImage from "../theme/ThemeImage";
 
 export default function AboutSection() {
   return (
@@ -8,13 +10,13 @@ export default function AboutSection() {
         <div className="container">
           <div className="row">
             <div className="col-lg-6 col-xl-5">
-              <div className="vb_about_banner">
-                <Image
-                  src={aboutBannerThreePng}
-                  alt="About vromonbilash banner"
-                  style={{ height: "auto" }}
-                />
-              </div>
+              {/* <div className="vb_about_banner"> */}
+              <ThemeImage
+                src={aboutBannerThreePng}
+                height="500"
+                alt="About vromonbilash banner"
+              />
+              {/* </div> */}
             </div>
             <div className="col-lg-6 col-xl-7">
               <div className="dqfh_right_contents">
@@ -31,7 +33,9 @@ export default function AboutSection() {
                   <a href="#">
                     Learn More{" "}
                     <span>
-                      <i className="fa-solid fa-arrow-up-right-from-square" />
+                      <FontAwesomeIcon icon={faUpRightFromSquare} />
+
+                      {/* <i className="fa-solid fa-arrow-up-right-from-square" /> */}
                     </span>
                   </a>
                 </div>

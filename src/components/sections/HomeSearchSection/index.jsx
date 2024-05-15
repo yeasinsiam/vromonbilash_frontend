@@ -7,6 +7,8 @@ import ResortGuestAndRoomsField from "./ResortGuestAndRoomsField";
 // import { DateRangePicker } from "react-date-range";
 // import DateRangePicker from "react-daterange-picker";
 import CheckInCheckOutField from "./CheckInCheckOutField";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGift, faHotel } from "@fortawesome/free-solid-svg-icons";
 
 export default function HomeSearchSection() {
   const [activeTab, setActiveTab] = useState("resort"); //[ resort | package ]
@@ -37,7 +39,8 @@ export default function HomeSearchSection() {
                       onClick={() => setActiveTab("resort")}
                     >
                       <span>
-                        <i className="fa-solid fa-hotel" />
+                        {/* <i className="fa-solid fa-hotel" /> */}
+                        <FontAwesomeIcon icon={faHotel} />
                       </span>
                       Resort
                     </button>
@@ -51,7 +54,9 @@ export default function HomeSearchSection() {
                       onClick={() => setActiveTab("package")}
                     >
                       <span>
-                        <i className="fa-solid fa-gift" />
+                        {/* <i className="fa-solid fa-gift" /> */}
+
+                        <FontAwesomeIcon icon={faGift} />
                       </span>
                       Package
                     </button>

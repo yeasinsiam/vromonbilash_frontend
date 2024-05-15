@@ -2,6 +2,13 @@ import Image from "next/image";
 import React from "react";
 import fullLogoImage from "@/assets/static/media/vb.logo.svg";
 import paymentGatewayPng from "@/assets/static/media/payment_getway.png";
+import {
+  faLinkedin,
+  faTwitch,
+  faTwitter,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Footer() {
   return (
@@ -192,17 +199,20 @@ export default function Footer() {
                       <ul className="list-unstyled mb-0">
                         <li className="list-inline-item">
                           <a href="#">
-                            <i className="fab fa-brands fa-whatsapp" />
+                            {/* <i className="fab fa-brands fa-whatsapp" /> */}
+                            <FontAwesomeIcon icon={faWhatsapp} />
                           </a>
                         </li>
                         <li className="list-inline-item">
                           <a href="#">
-                            <i className="fab fa-brands fa-twitter" />
+                            {/* <i className="fab fa-brands fa-twitter" /> */}
+                            <FontAwesomeIcon icon={faTwitter} />
                           </a>
                         </li>
                         <li className="list-inline-item">
                           <a href="#">
-                            <i className="fab fa-brands fa-linkedin" />
+                            {/* <i className="fab fa-brands fa-linkedin" /> */}
+                            <FontAwesomeIcon icon={faLinkedin} />
                           </a>
                         </li>
                       </ul>

@@ -1,3 +1,5 @@
+import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef, useState } from "react";
 
 export default function ResortGuestAndRoomsField() {
@@ -86,7 +88,8 @@ export default function ResortGuestAndRoomsField() {
               onClick={() => handleChangeAdultCount(adultsCount - 1)}
               id="adults-subs-btn"
             >
-              <i className="fa-solid fa-minus" />
+              {/* <i className="fa-solid fa-minus" /> */}
+              <FontAwesomeIcon icon={faMinus} />
             </span>
             <span className="guests-input__value">
               <span id="guests-count-adults">{adultsCount}</span>
@@ -97,7 +100,7 @@ export default function ResortGuestAndRoomsField() {
               id="adults-add-btn"
               onClick={() => handleChangeAdultCount(adultsCount + 1)}
             >
-              <i className="fa-solid fa-plus" />
+              <FontAwesomeIcon icon={faPlus} />
             </span>
           </div>
           <div>
@@ -108,7 +111,8 @@ export default function ResortGuestAndRoomsField() {
               onClick={() => handleChangeChildrenCount(childrenCount - 1)}
               id="children-subs-btn"
             >
-              <i className="fa-solid fa-minus" />
+              {/* <i className="fa-solid fa-minus" /> */}
+              <FontAwesomeIcon icon={faMinus} />
             </span>
             <span className="guests-input__value">
               <span id="guests-count-children">{childrenCount}</span>
@@ -119,7 +123,7 @@ export default function ResortGuestAndRoomsField() {
               onClick={() => handleChangeChildrenCount(childrenCount + 1)}
               id="children-add-btn"
             >
-              <i className="fa-solid fa-plus" />
+              <FontAwesomeIcon icon={faPlus} />
             </span>
           </div>
         </div>

@@ -1,6 +1,9 @@
 import Image from "next/image";
 import offerImageJpg from "@/assets/static/media/offer_img.jpg";
 import { useState } from "react";
+import ThemeImage from "../theme/ThemeImage";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeadphonesSimple } from "@fortawesome/free-solid-svg-icons";
 
 export default function HomeBannerSection() {
   const [openVideo, setOpenVideo] = useState(false);
@@ -64,10 +67,12 @@ export default function HomeBannerSection() {
                 </div>
               </article>
               <figure className="mainHeading__image">
-                <Image src={offerImageJpg} alt="Offer image" />
+                {/* <Image src={offerImageJpg} alt="Offer image" /> */}
+                <ThemeImage src={offerImageJpg} height={600} />
                 <div className="banner_image_features">
                   <span>
-                    <i className="fa-solid fa-headphones-simple" />
+                    {/* <i className="fa-solid fa-headphones-simple" /> */}
+                    <FontAwesomeIcon icon={faHeadphonesSimple} />
                   </span>
                   <h2>24/7</h2>
                   <h4>Guide Supports</h4>
