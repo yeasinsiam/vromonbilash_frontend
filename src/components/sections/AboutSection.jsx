@@ -1,5 +1,7 @@
-import Image from "next/image";
 import aboutBannerThreePng from "@/assets/static/media/about-banner-three.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import ThemeImage from "../theme/ThemeImage";
 
 export default function AboutSection() {
   return (
@@ -8,12 +10,35 @@ export default function AboutSection() {
         <div className="container">
           <div className="row">
             <div className="col-lg-6 col-xl-5">
+              {/*  */}
+              {/*  */}
+              {/*  */}
+              {/* skeleton showing */}
+              {/* <div className="c-item">
+                <div className="c-item__top">
+                  <div className="c-skeleton-square" />
+                </div>
+                <div className="c-item__center">
+                  <h3>
+                    <div className="c-skeleton-line" />
+                    <div className="c-skeleton-line" />
+                  </h3>
+                </div>
+                <div className="c-item__bottom">
+                  <div className="c-skeleton-line" />
+                  <div className="c-skeleton-line" />
+                </div>
+                <div className="c-item__add">
+                  <div className="c-skeleton-square" />
+                </div>
+              </div> */}
+              {/* skeleton ending */}
+              {/*  */}
+              {/*  */}
+              {/*  */}
+
               <div className="vb_about_banner">
-                <Image
-                  src={aboutBannerThreePng}
-                  alt="About vromonbilash banner"
-                  style={{ height: "auto" }}
-                />
+                <ThemeImage />
               </div>
             </div>
             <div className="col-lg-6 col-xl-7">
@@ -31,7 +56,9 @@ export default function AboutSection() {
                   <a href="#">
                     Learn More{" "}
                     <span>
-                      <i className="fa-solid fa-arrow-up-right-from-square" />
+                      <FontAwesomeIcon icon={faUpRightFromSquare} />
+
+                      {/* <i className="fa-solid fa-arrow-up-right-from-square" /> */}
                     </span>
                   </a>
                 </div>

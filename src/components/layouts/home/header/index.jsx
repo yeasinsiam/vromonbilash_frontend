@@ -5,6 +5,16 @@ import shortLogoImage from "@/assets/static/media/vb.short-logo.png";
 import avatarImage from "@/assets/static/media/avatar.jpg";
 import Link from "next/link";
 import DropdownMenu from "./DropdownMenu";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faExpand,
+  faGear,
+  faPhoneVolume,
+  faRightFromBracket,
+  faSearch,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
+import { faBookmark, faHeart } from "@fortawesome/free-regular-svg-icons";
 
 export default function Header() {
   const [isStickyHeader, setIsStickyHeader] = useState(false);
@@ -37,7 +47,8 @@ export default function Header() {
                 <div className="top_header_call_wrapper d-flex align-items-center">
                   <div className="th_call_icon">
                     <span>
-                      <i className="fa-solid fa-phone-volume" />
+                      {/* <i className="fa-solid fa-phone-volume" /> */}
+                      <FontAwesomeIcon icon={faPhoneVolume} />
                     </span>
                   </div>
                   <div className="th_call_content">
@@ -48,13 +59,13 @@ export default function Header() {
               </div>
               <div className="col-6 col-md-4 col-lg-4">
                 <div className="header_main_logo text-center">
-                  <a href="index.html">
+                  <Link href="/">
                     <Image
                       src={fullLogoImage}
                       alt="vromonbilash"
                       style={{ height: "auto" }}
                     />
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-6 col-md-4 col-lg-4">
@@ -79,7 +90,8 @@ export default function Header() {
                         <li>
                           <a href="#">
                             <span>
-                              <i className="fa-regular fa-user" />
+                              {/* <i className="fa-regular fa-user" /> */}
+                              <FontAwesomeIcon icon={faUser} />
                             </span>{" "}
                             Profile
                           </a>
@@ -87,7 +99,8 @@ export default function Header() {
                         <li>
                           <a href="#">
                             <span>
-                              <i className="fa-regular fa-bookmark" />
+                              {/* <i className="fa-regular fa-bookmark" /> */}
+                              <FontAwesomeIcon icon={faBookmark} />
                             </span>{" "}
                             My Bookings
                           </a>
@@ -95,7 +108,8 @@ export default function Header() {
                         <li>
                           <a href="#">
                             <span>
-                              <i className="fa-regular fa-heart" />
+                              {/* <i className="fa-regular fa-heart" /> */}
+                              <FontAwesomeIcon icon={faHeart} />
                             </span>{" "}
                             My Wishlist
                           </a>
@@ -103,7 +117,8 @@ export default function Header() {
                         <li>
                           <a href="#">
                             <span>
-                              <i className="fa-solid fa-gear" />
+                              {/* <i className="fa-solid fa-gear" /> */}
+                              <FontAwesomeIcon icon={faGear} />
                             </span>{" "}
                             Settings
                           </a>
@@ -111,7 +126,8 @@ export default function Header() {
                         <li>
                           <a href="#">
                             <span>
-                              <i className="fa-solid fa-expand" />
+                              {/* <i className="fa-solid fa-expand" /> */}
+                              <FontAwesomeIcon icon={faExpand} />
                             </span>{" "}
                             Help Center
                           </a>
@@ -119,7 +135,8 @@ export default function Header() {
                         <li>
                           <a href="#">
                             <span>
-                              <i className="fa-solid fa-right-from-bracket" />
+                              {/* <i className="fa-solid fa-right-from-bracket" /> */}
+                              <FontAwesomeIcon icon={faRightFromBracket} />
                             </span>
                             Logout
                           </a>
@@ -177,7 +194,11 @@ export default function Header() {
                       </div>
                     </ul>
                     <div id="search-wrapper">
-                      <i className="search-icon fas fa-search" />
+                      <FontAwesomeIcon
+                        className="search-icon"
+                        icon={faSearch}
+                      />
+                      {/* <i className="search-icon fas fa-search" /> */}
                       <input
                         type="text"
                         id="search"
