@@ -47,6 +47,10 @@ p {
   margin-bottom: 0;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 /* ================== Banner Style Css Start =================== */
 .mainHeading__content {
   min-height: 600px;
@@ -1625,7 +1629,10 @@ select {
   background-color: #312783 !important;
 }
 
-/* ThemImage css */
+/* ================================>> */
+/* ==================================ThemImage css */
+/* ================================>> */
+
 .image-container {
   width: 100%;
   min-height: 100%;
@@ -1653,4 +1660,10 @@ select {
 .image-container .c-skeleton-square {
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 480px) {
+  .image-container.image-loaded {
+    height: auto !important;
+  }
 }
