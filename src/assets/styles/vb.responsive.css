@@ -75,10 +75,11 @@
   .banner_right__image {
     position: relative;
   }
-  .banner_right__image img {
-    width: 100%;
+  .banner_right__image .image-container {
+    height: 550px;
     border-radius: 10px;
   }
+
   .banner_image_features_mbl {
     position: absolute;
     bottom: -50px;

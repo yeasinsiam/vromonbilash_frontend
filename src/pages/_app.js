@@ -17,7 +17,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
 // Swiper
-import "swiper/swiper-bundle.css";
+// import "swiper/swiper-bundle.css";
 
 import "@/assets/styles/bootstrap.css";
 import "@/assets/styles/vb.header.footer.css";

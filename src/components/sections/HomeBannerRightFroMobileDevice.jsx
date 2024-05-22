@@ -16,7 +16,7 @@ export default function HomeBannerRightFroMobileDevice() {
               alt="Offer image"
               style={{ height: "auto" }}
             /> */}
-            <ThemeImage src={offerImageJpg} height={600} alt="Offer Image" />
+            <ThemeImage src={offerImageJpg} height="600px" alt="Offer Image" />
 
             <div className="banner_image_features_mbl">
               <span>

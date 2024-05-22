@@ -1,11 +1,19 @@
-import f1Jpg from "@/assets/static/media/features_img/f1.jpg";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
+import ThemeImage from "../theme/ThemeImage";
+
+import f1Jpg from "@/assets/static/media/features_img/f1.jpg";
+import f2Jpg from "@/assets/static/media/features_img/f2.jpg";
+import f3Jpg from "@/assets/static/media/features_img/f3.jpg";
+import f4Jpg from "@/assets/static/media/features_img/f4.jpg";
+import f5Jpg from "@/assets/static/media/features_img/f5.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 export default function HomeFeaturesSection() {
   const swiperElRef = useRef();
 
   // init swiper
-
   useEffect(() => {
     if (swiperElRef.current) {
       const swiperEl = swiperElRef.current;
@@ -37,20 +45,24 @@ export default function HomeFeaturesSection() {
         mousewheel: {
           thresholdDelta: 70,
         },
+
         breakpoints: {
-          460: {
-            slidesPerView: 3,
-          },
-          768: {
-            slidesPerView: 2,
+          640: {
+            slidesPerView: 1,
           },
           1024: {
             slidesPerView: 2,
           },
-          1600: {
-            slidesPerView: 2,
-          },
         },
+        injectStyles: [
+          `
+       .swiper {
+          overflow-x: hidden;
+          overflow-y: auto;
+          padding-bottom: 20px;
+       }
+      `,
+        ],
         // on: {
         //   afterInit: handleAfterInit,
         // },
@@ -82,91 +94,20 @@ export default function HomeFeaturesSection() {
                   </p>
                 </div>
               </div>
-              <div className="swiper-container">
-                <div className="features_swiper">
-                  <swiper-container
-                    ref={swiperElRef}
-                    init="false"
-                    className="swiper-wrapper"
-                  >
-                    <swiper-slide>
-                      <div
-                        className="features_swiper-slide swiper-slide "
-                        style={{
-                          backgroundImage: "url(/features_img/f1.jpg)",
-                        }}
-                      >
-                        <div className="features_price">
-                          <span>Start form</span>
-                          <h1>
-                            ৳ 3500 <span>/Night</span>
-                          </h1>
-                        </div>
-                        <div className="slide-content">
-                          <h3>Dreamer Paradise Beach Resort</h3>
-                          <span>
-                            <em>
-                              <i className="fa-solid fa-location-dot" />
-                            </em>{" "}
-                            North Beach{" "}
-                          </span>
-                        </div>
-                      </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                      <div
-                        className="features_swiper-slide swiper-slide "
-                        style={{
-                          backgroundImage: "url(/features_img/f1.jpg)",
-                        }}
-                      >
-                        <div className="features_price">
-                          <span>Start form</span>
-                          <h1>
-                            ৳ 3500 <span>/Night</span>
-                          </h1>
-                        </div>
-                        <div className="slide-content">
-                          <h3>Dreamer Paradise Beach Resort</h3>
-                          <span>
-                            <em>
-                              <i className="fa-solid fa-location-dot" />
-                            </em>{" "}
-                            North Beach{" "}
-                          </span>
-                        </div>
-                      </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                      <div
-                        className="features_swiper-slide swiper-slide "
-                        style={{
-                          backgroundImage: "url(/features_img/f1.jpg)",
-                        }}
-                      >
-                        <div className="features_price">
-                          <span>Start form</span>
-                          <h1>
-                            ৳ 3500 <span>/Night</span>
-                          </h1>
-                        </div>
-                        <div className="slide-content">
-                          <h3>Dreamer Paradise Beach Resort</h3>
-                          <span>
-                            <em>
-                              <i className="fa-solid fa-location-dot" />
-                            </em>{" "}
-                            North Beach{" "}
-                          </span>
-                        </div>
-                      </div>
-                    </swiper-slide>
-                    {/* <swiper-slide
-                      className="features_swiper-slide swiper-slide swiper-slide--two"
-                      style={{
-                        backgroundImage: "url(/features_img/f2.jpg)",
-                      }}
-                    >
+              <div className="swiper-container_wrapper">
+                <swiper-container
+                  ref={swiperElRef}
+                  init="false"
+                  class="swiper-wrapper"
+                >
+                  <swiper-slide class="features_swiper-slide swiper-slide">
+                    <div className="features_swiper-slide-wrapper">
+                      <ThemeImage
+                        src={f1Jpg}
+                        // height="384px"
+                        alt="feature images"
+                      />
+
                       <div className="features_price">
                         <span>Start form</span>
                         <h1>
@@ -177,18 +118,21 @@ export default function HomeFeaturesSection() {
                         <h3>Dreamer Paradise Beach Resort</h3>
                         <span>
                           <em>
-                            <i className="fa-solid fa-location-dot" />
+                            <FontAwesomeIcon icon={faLocationDot} />
                           </em>{" "}
                           North Beach{" "}
                         </span>
                       </div>
-                    </swiper-slide>
-                    <swiper-slide
-                      className="features_swiper-slide swiper-slide swiper-slide--three"
-                      style={{
-                        backgroundImage: "url(/features_img/f3.jpg)",
-                      }}
-                    >
+                    </div>
+                  </swiper-slide>
+                  <swiper-slide class="features_swiper-slide swiper-slide">
+                    <div className="features_swiper-slide-wrapper">
+                      <ThemeImage
+                        src={f2Jpg}
+                        // height="384px"
+                        alt="feature images"
+                      />
+
                       <div className="features_price">
                         <span>Start form</span>
                         <h1>
@@ -199,18 +143,21 @@ export default function HomeFeaturesSection() {
                         <h3>Dreamer Paradise Beach Resort</h3>
                         <span>
                           <em>
-                            <i className="fa-solid fa-location-dot" />
+                            <FontAwesomeIcon icon={faLocationDot} />
                           </em>{" "}
                           North Beach{" "}
                         </span>
                       </div>
-                    </swiper-slide>
-                    <swiper-slide
-                      className="features_swiper-slide swiper-slide swiper-slide--four"
-                      style={{
-                        backgroundImage: "url(/features_img/f4.jpg)",
-                      }}
-                    >
+                    </div>
+                  </swiper-slide>
+                  <swiper-slide class="features_swiper-slide swiper-slide">
+                    <div className="features_swiper-slide-wrapper">
+                      <ThemeImage
+                        src={f3Jpg}
+                        // height="384px"
+                        alt="feature images"
+                      />
+
                       <div className="features_price">
                         <span>Start form</span>
                         <h1>
@@ -221,18 +168,21 @@ export default function HomeFeaturesSection() {
                         <h3>Dreamer Paradise Beach Resort</h3>
                         <span>
                           <em>
-                            <i className="fa-solid fa-location-dot" />
+                            <FontAwesomeIcon icon={faLocationDot} />
                           </em>{" "}
                           North Beach{" "}
                         </span>
                       </div>
-                    </swiper-slide>
-                    <swiper-slide
-                      className="features_swiper-slide swiper-slide swiper-slide--five"
-                      style={{
-                        backgroundImage: "url(/features_img/f5.jpg)",
-                      }}
-                    >
+                    </div>
+                  </swiper-slide>
+                  <swiper-slide class="features_swiper-slide swiper-slide">
+                    <div className="features_swiper-slide-wrapper">
+                      <ThemeImage
+                        src={f4Jpg}
+                        // height="384px"
+                        alt="feature images"
+                      />
+
                       <div className="features_price">
                         <span>Start form</span>
                         <h1>
@@ -243,14 +193,39 @@ export default function HomeFeaturesSection() {
                         <h3>Dreamer Paradise Beach Resort</h3>
                         <span>
                           <em>
-                            <i className="fa-solid fa-location-dot" />
+                            <FontAwesomeIcon icon={faLocationDot} />
                           </em>{" "}
                           North Beach{" "}
                         </span>
                       </div>
-                    </swiper-slide> */}
-                  </swiper-container>
-                </div>
+                    </div>
+                  </swiper-slide>
+                  <swiper-slide class="features_swiper-slide swiper-slide">
+                    <div className="features_swiper-slide-wrapper">
+                      <ThemeImage
+                        src={f5Jpg}
+                        // height="384px"
+                        alt="feature images"
+                      />
+
+                      <div className="features_price">
+                        <span>Start form</span>
+                        <h1>
+                          ৳ 3500 <span>/Night</span>
+                        </h1>
+                      </div>
+                      <div className="slide-content">
+                        <h3>Dreamer Paradise Beach Resort</h3>
+                        <span>
+                          <em>
+                            <FontAwesomeIcon icon={faLocationDot} />
+                          </em>{" "}
+                          North Beach{" "}
+                        </span>
+                      </div>
+                    </div>
+                  </swiper-slide>
+                </swiper-container>
                 <div className="swiper-pagination" />
               </div>
             </div>

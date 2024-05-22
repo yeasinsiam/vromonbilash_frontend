@@ -42,7 +42,7 @@ export default function DownloadAppSection() {
                 <div className="download_app_item d-flex align-items-center">
                   <div className="dai_icon">
                     <span>
-                      <i className="fa-solid fa-hand-holding-heart" />
+                      <FontAwesomeIcon icon={faHandHoldingHeart} />
                     </span>
                   </div>
                   <div className="dai_content">
@@ -58,7 +58,7 @@ export default function DownloadAppSection() {
                 <div className="download_app_item d-flex align-items-center">
                   <div className="dai_icon">
                     <span>
-                      <i className="fa-solid fa-hand-holding-dollar" />
+                      <FontAwesomeIcon icon={faHandHoldingDollar} />
                     </span>
                   </div>
                   <div className="dai_content">

@@ -24,7 +24,7 @@ export default function HomeFeatureHotelsSection() {
                   {/* <Image src={hotel1jpg} alt="asdf" /> */}
                   <ThemeImage
                     src={hotel1jpg}
-                    height="460"
+                    // height="460px"
                     alt="feature hotel banner"
                   />
                   <div className="hotel_location">
@@ -61,7 +61,7 @@ export default function HomeFeatureHotelsSection() {
                 <div className="features_hotel_img">
                   <ThemeImage
                     src={hotel2jpg}
-                    height="460"
+                    // height="460px"
                     alt="feature hotel banner"
                   />
                   <div className="hotel_location">
@@ -98,7 +98,7 @@ export default function HomeFeatureHotelsSection() {
                 <div className="features_hotel_img">
                   <ThemeImage
                     src={hotel3jpg}
-                    height="460"
+                    // height="460px"
                     alt="feature hotel banner"
                   />
                   <div className="hotel_location">
@@ -135,7 +135,7 @@ export default function HomeFeatureHotelsSection() {
                 <div className="features_hotel_img">
                   <ThemeImage
                     src={hotel4jpg}
-                    height="460"
+                    // height="460px"
                     alt="feature hotel banner"
                   />
                   <div className="hotel_location">

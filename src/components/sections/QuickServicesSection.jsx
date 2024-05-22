@@ -19,7 +19,7 @@ export default function QuickServicesSection() {
               /> */}
               <ThemeImage
                 src={quickServiceBannerJpg}
-                height={600}
+                // height="600px"
                 alt="Quick Service Banner"
               />
               <div className="spin_star_animation">
