@@ -11,9 +11,10 @@ export default function AboutSection() {
           <div className="row">
             <div className="col-lg-6 col-xl-5">
               {/* <div className="vb_about_banner"> */}
+
               <ThemeImage
                 src={aboutBannerThreePng}
-                height="500"
+                // height="500px"
                 alt="About vromonbilash banner"
               />
               {/* </div> */}

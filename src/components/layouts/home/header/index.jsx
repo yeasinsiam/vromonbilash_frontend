@@ -167,7 +167,11 @@ export default function Header() {
                     </label>
                     <div className="sticky_logo ">
                       <a href="index.html">
-                        <Image src={shortLogoImage} alt="vromonbilash logo" />
+                        <Image
+                          src={shortLogoImage}
+                          alt="vromonbilash logo"
+                          priority
+                        />
                       </a>
                     </div>
                     <ul className="nav-links">

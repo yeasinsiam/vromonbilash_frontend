@@ -67,8 +67,11 @@ export default function HomeBannerSection() {
                 </div>
               </article>
               <figure className="mainHeading__image">
-                {/* <Image src={offerImageJpg} alt="Offer image" /> */}
-                <ThemeImage src={offerImageJpg} height={600} />
+                <ThemeImage
+                  src={offerImageJpg}
+                  // height="600px"
+                  alt="Offer image"
+                />
                 <div className="banner_image_features">
                   <span>
                     {/* <i className="fa-solid fa-headphones-simple" /> */}

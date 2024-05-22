@@ -5,24 +5,8 @@ export default function ThemeImage({ height, src, alt, ...wrapperProps }) {
   const [isLoaded, setIsLoaded] = useState(false);
   return (
     <>
-      {/* {isLoaded && (
-        <style jsx>
-          {`
-            @media (max-width: 480px) {
-              .image-container {
-                height: auto !important;
-              }
-            }
-          `}
-        </style>
-      )} */}
-
       <div
         className={`image-container ${isLoaded ? "image-loaded" : ""}`}
-        style={{
-          borderRadius: "20px",
-          height: `${height}px`,
-        }}
         {...wrapperProps}
       >
         <Image
@@ -37,7 +21,7 @@ export default function ThemeImage({ height, src, alt, ...wrapperProps }) {
           <div
             className="skeleton-wrapper"
             style={{
-              height: `${height}px`,
+              height: `100%`,
             }}
           >
             <div className="c-skeleton-square" />
