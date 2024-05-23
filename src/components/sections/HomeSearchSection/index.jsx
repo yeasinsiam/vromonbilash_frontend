@@ -81,11 +81,15 @@ export default function HomeSearchSection() {
                             <div className="resort_package_search_form">
                               <div className="row">
                                 <div className="col-md-12 col-lg-4">
-                                  <div className="input_form_style">
+                                  <div
+                                    className="input_form_style"
+                                    style={{
+                                      position: "relative",
+                                      zIndex: "20",
+                                    }}
+                                  >
                                     <label htmlFor="">Location</label>
-                                    <div className="main">
-                                      <LocationField />
-                                    </div>
+                                    <LocationField />
                                   </div>
                                 </div>
                                 <div className="col-md-5 col-lg-3">
