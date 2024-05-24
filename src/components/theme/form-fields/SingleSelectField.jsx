@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
-export default function SelectField() {
+export default function SingleSelectField({
+  label,
+  selectText = "Select any item",
+}) {
   const dropdownRef = useRef(null);
   const searchBoxRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -58,9 +61,14 @@ export default function SelectField() {
   }, [dropdownRef, showDropdown]);
 
   return (
-    <>
-      <input type="hidden" />
-
+    <div
+      className="input_form_style"
+      style={{
+        position: "relative",
+        zIndex: "10",
+      }}
+    >
+      <label htmlFor="">{label}</label>
       <div ref={dropdownRef} className="select_and_search_form">
         <div className="form-group select_search_form_group">
           <span className="select_form-arrow">
@@ -80,7 +88,6 @@ export default function SelectField() {
                 d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
               />
             </svg>
-            {/* <i class="fa-solid fa-caret-down"></i> Font Awesome fontawesome.com */}
           </span>
 
           <div className="dropdown">
@@ -90,16 +97,12 @@ export default function SelectField() {
             {showDropdown ? (
               <motion.div
                 key={"home-search-location-motion"}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -10, opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                <div
-                  className="dropdown-menu"
-                  style={{ display: "block", marginTop: "4px" }}
-                  // style={{ display: showDropdown ? "block" : "none" }}
-                >
+                <div className="custom-dropdown-menu">
                   <input
                     placeholder="Search..."
                     type="text"
@@ -114,7 +117,7 @@ export default function SelectField() {
                       data-value="Select your country"
                       style={{ display: "block" }}
                     >
-                      Select your country
+                      {selectText}
                     </div>
                     <div
                       className="dropdown-menu-item is-select"
@@ -914,6 +917,6 @@ export default function SelectField() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

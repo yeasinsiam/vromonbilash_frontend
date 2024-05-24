@@ -1,14 +1,14 @@
 import Image from "next/image";
-import searchGif from "@/assets/static/media/search.gif";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import LocationField from "./LocationField";
-import ResortGuestAndRoomsField from "./ResortGuestAndRoomsField";
+import SingleSelectField from "@/components/theme/form-fields/SingleSelectField";
+import DateRangeField from "@/components/theme/form-fields/DateRangeField";
 // import { DateRangePicker } from "react-date-range";
 // import DateRangePicker from "react-daterange-picker";
-import CheckInCheckOutField from "./CheckInCheckOutField";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGift, faHotel } from "@fortawesome/free-solid-svg-icons";
+import searchGif from "@/assets/static/media/search.gif";
+import GuestAndRoomsField from "@/components/theme/form-fields/GuestAndRoomsField";
 
 export default function HomeSearchSection() {
   const [activeTab, setActiveTab] = useState("resort"); //[ resort | package ]
@@ -20,8 +20,8 @@ export default function HomeSearchSection() {
     <section className="search_field_section">
       <div className="container">
         <div className="row">
-          <div className="col-lg-12 col-xl-11 col-xxl-10">
-            <form action="">
+          <div className="col-lg-12 col-xl-11 col-xxl-11">
+            <div>
               <div className="search_form_wrapper">
                 <nav>
                   <div
@@ -81,22 +81,16 @@ export default function HomeSearchSection() {
                             <div className="resort_package_search_form">
                               <div className="row">
                                 <div className="col-md-12 col-lg-4">
-                                  <div
-                                    className="input_form_style"
-                                    style={{
-                                      position: "relative",
-                                      zIndex: "20",
-                                    }}
-                                  >
-                                    <label htmlFor="">Location</label>
-                                    <LocationField />
-                                  </div>
+                                  <SingleSelectField
+                                    label="Location"
+                                    selectText=" Select your country"
+                                  />
                                 </div>
                                 <div className="col-md-5 col-lg-3">
-                                  <CheckInCheckOutField />
+                                  <DateRangeField label="Check in - Out" />
                                 </div>
                                 <div className="col-md-5 col-lg-3">
-                                  <ResortGuestAndRoomsField />
+                                  <GuestAndRoomsField />
                                 </div>
                                 <div className="col-md-2 col-lg-2">
                                   <button
@@ -124,20 +118,16 @@ export default function HomeSearchSection() {
                             <div className="resort_package_search_form">
                               <div className="row">
                                 <div className="col-md-12 col-lg-5">
-                                  <div className="input_form_style">
-                                    <label htmlFor="">Location</label>
-                                    <div className="main">
-                                      <LocationField />
-                                    </div>
-                                  </div>
+                                  <SingleSelectField
+                                    label="Location"
+                                    selectText=" Select your country"
+                                  />
                                 </div>
                                 <div className="col-md-12 col-lg-5">
-                                  <div className="input_form_style">
-                                    <label htmlFor="">Package Type</label>
-                                    <div className="main">
-                                      <LocationField />
-                                    </div>
-                                  </div>
+                                  <SingleSelectField
+                                    label="Location"
+                                    selectText="Select your package"
+                                  />
                                 </div>
                                 <div className="col-md-2 col-lg-2">
                                   <button
@@ -150,6 +140,7 @@ export default function HomeSearchSection() {
                                         <Image
                                           src={searchGif}
                                           alt="Search"
+                                          unoptimized
                                           style={{ height: "auto" }}
                                         />
                                       </div>
@@ -165,7 +156,7 @@ export default function HomeSearchSection() {
                   </AnimatePresence>
                 </div>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>

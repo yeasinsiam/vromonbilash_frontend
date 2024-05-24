@@ -3,18 +3,70 @@ import React, { useEffect, useRef, useState } from "react";
 import { DateRange } from "react-date-range";
 import moment from "moment";
 
-export default function CheckInCheckOutField() {
+export default function DateRangeField({
+  label,
+  startDate = moment().format(),
+  endDate = moment().add(7, "day").format(),
+}) {
+  const { inputRef, dropdownRef, isMobile, showDropdown } = useInitDateRange();
+
+  const [dateRange, setDateRange] = useState([
+    {
+      startDate,
+      endDate,
+      key: "selection",
+    },
+  ]);
+
+  return (
+    <div className="position-relative" style={{ zIndex: "10" }}>
+      <div className="input_form_style ">
+        <label htmlFor="">{label}</label>
+        <input
+          ref={inputRef}
+          value={`${moment(dateRange[0].startDate).format(
+            "DD/MM/YYYY"
+          )} - ${moment(dateRange[0].endDate).format("DD/MM/YYYY")}`}
+          readOnly
+        />
+      </div>
+
+      {showDropdown ? (
+        <motion.div
+          key={"home-search-checkout-checkin-calender"}
+          initial={{ y: 10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -10, opacity: 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          <div
+            ref={dropdownRef}
+            className="home-search-checkin-checkout-calender"
+          >
+            <DateRange
+              onChange={(item) => setDateRange([item.selection])}
+              showSelectionPreview={false}
+              moveRangeOnFirstSelection={false}
+              months={2}
+              ranges={dateRange}
+              direction={isMobile ? "vertical" : "horizontal"}
+              showDateDisplay={false}
+              rangeColors={["#312783"]}
+            />
+          </div>
+        </motion.div>
+      ) : (
+        ""
+      )}
+    </div>
+  );
+}
+
+const useInitDateRange = () => {
   const inputRef = useRef(null);
   const dropdownRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-  const [dateRange, setDateRange] = useState([
-    {
-      startDate: moment().format(),
-      endDate: moment().add(7, "day").format(),
-      key: "selection",
-    },
-  ]);
 
   // show if click on input
   useEffect(() => {
@@ -77,46 +129,5 @@ export default function CheckInCheckOutField() {
     };
   }, []);
 
-  return (
-    <div className="position-relative" style={{ zIndex: "10" }}>
-      <div className="input_form_style ">
-        <label htmlFor="">Check in - Out</label>
-        <input
-          ref={inputRef}
-          value={`${moment(dateRange[0].startDate).format(
-            "DD/MM/YYYY"
-          )} - ${moment(dateRange[0].endDate).format("DD/MM/YYYY")}`}
-          readOnly
-        />
-      </div>
-
-      {showDropdown ? (
-        <motion.div
-          key={"home-search-checkout-checkin-calender"}
-          initial={{ y: 10, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -10, opacity: 0 }}
-          transition={{ duration: 0.2 }}
-        >
-          <div
-            ref={dropdownRef}
-            className="home-search-checkin-checkout-calender"
-          >
-            <DateRange
-              onChange={(item) => setDateRange([item.selection])}
-              showSelectionPreview={false}
-              moveRangeOnFirstSelection={false}
-              months={2}
-              ranges={dateRange}
-              direction={isMobile ? "vertical" : "horizontal"}
-              showDateDisplay={false}
-              rangeColors={["#312783"]}
-            />
-          </div>
-        </motion.div>
-      ) : (
-        ""
-      )}
-    </div>
-  );
-}
+  return { inputRef, dropdownRef, isMobile, showDropdown };
+};

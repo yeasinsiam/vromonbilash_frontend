@@ -18,7 +18,7 @@ export default function HomeSearchSectionLoadingPlaceholder() {
       <section className="search_field_section">
         <div className="container">
           <div className="row">
-            <div className="col-lg-12 col-xl-11 col-xxl-10">
+            <div className="col-lg-12 col-xl-11 col-xxl-11">
               <form action="">
                 <div className="search_form_wrapper ">
                   <nav>

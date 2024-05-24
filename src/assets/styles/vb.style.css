@@ -382,11 +382,13 @@
   cursor: pointer;
 }
 
-.select_and_search_form .dropdown-menu {
+.select_and_search_form .custom-dropdown-menu {
   padding: 1rem;
   position: absolute;
-  display: none;
-  top: 50px;
+  margin-top: 4px;
+  display: block;
+  border: 1px solid #ddd;
+  /* top: 50px; */
   left: 0;
   width: 100%;
   z-index: 999999;
@@ -422,6 +424,7 @@
   cursor: pointer;
   user-select: none;
   padding: 6px;
+  margin: 2px 0px;
   background-color: #fff;
   transition: all 0.2s ease-in-out;
   border-radius: var(--border-radius10px);
