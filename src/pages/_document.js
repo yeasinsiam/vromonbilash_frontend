@@ -15,6 +15,11 @@ export default function Document() {
           // src="/lib/swiper/swiper-bundle.min.js"
           strategy="beforeInteractive"
         />
+        <Script src="/assets/js/wnumb.min.js" strategy="beforeInteractive" />
+        <Script
+          src="/assets/js/nouislider.min.js"
+          strategy="beforeInteractive"
+        />
       </body>
     </Html>
   );

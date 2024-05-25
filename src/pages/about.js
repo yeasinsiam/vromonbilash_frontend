@@ -16,7 +16,7 @@ export default function AboutPage() {
 
   return (
     <div>
-      <Link href="/">Home</Link>
+      <Link href="/">Go Back To Home Page</Link>
       <br />
       <div className="home-search-checkin-checkout-calender">
         <DateRange

@@ -1,0 +1,65 @@
+:root {
+  --font-size42: 42px;
+  --font-size40: 40px;
+  --font-size36: 36px;
+  --font-size32: 32px;
+  --font-size26: 26px;
+  --font-size24: 24px;
+  --font-size22: 22px;
+  --font-size20: 20px;
+  --font-size18: 18px;
+  --font-size16: 16px;
+  --font-size14: 14px;
+  --font-size12: 12px;
+  --main-color: #071516;
+  --hover-color: #312783;
+  --hover-color2: #f6a200;
+  --paragraph-color: #;
+  --bg-white-100: #fff;
+  --borderGrafy: 1px solid #e9edf7;
+  --borderLight: 1px solid #c6dbf3;
+  --border-radius6px: 6px;
+  --border-radius10px: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span strong,
+b,
+em {
+  font-family: var(--h-font-500);
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+a:hover,
+a :focus {
+  color: var(--hover-color);
+}
+
+p {
+  font-family: var(--p-font-400);
+  margin-bottom: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  color: #6e6e75;
+}
+
+html,
+body {
+  overflow-x: hidden !important;
+  width: 100vw !important;
+}

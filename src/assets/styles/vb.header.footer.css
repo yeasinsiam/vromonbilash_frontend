@@ -1,32 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-:root {
-  --main-color: #071516;
-  --text-white-100: #fff;
-  --bg-white-100: #e8f2fe;
-  --hover-color: #312783;
-  --hover-color2: #f6a200;
-  --box-shadow-1: rgba(0, 0, 0, 0.12) 0px 2px 5px 2px;
-  --box-shadow-2: 0 10px 6px 4px rgb(5, 0, 26, 0.1);
-  --box-shadow-black-1: -1px 2px 2px 2px var(--hover-color);
-  --bg-overlay-color1: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 1) 30%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  --bg-dark: #03001c;
-  --h-font-300: "BarlowCondensed-Light";
-  --h-font-400: "BarlowCondensed-Regular";
-  --h-font-500: "BarlowCondensed-Medium";
-  --h-font-600: "BarlowCondensed-Bold";
-  --h-font-700: "BarlowCondensed-SemiBold";
-  --p-font-300: "Jost-Light";
-  --p-font-400: "Jost-Regular";
-  --p-font-500: "Jost-Medium";
-}
-
 /* ================= Header Top Style Css Start ================== */
 .header_top {
   padding: 1rem 0;
@@ -62,13 +33,9 @@
   border-radius: 50%;
 }
 
-.top_header_call_wrapper .th_call_content p {
-  font-size: 0.8rem;
-}
-
 .top_header_call_wrapper .th_call_content a {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: var(--font-size16);
+  font-family: var(--h-font-500);
   color: var(--hover-color);
 }
 
@@ -80,18 +47,17 @@
 .navigation {
   position: absolute;
   top: 15px;
-  right: 26.5%;
+  right: 28.5%;
   width: 90px;
   height: 46px;
   display: flex;
   justify-content: space-between;
-  border-radius: 5px;
+  border-radius: var(--border-radius6px);
   overflow: hidden;
   transition: height 0.5s, width 0.5s;
   transition-delay: 0s, 0.75s;
-  z-index: 999999;
+  z-index: 9999999;
 }
-
 .navigation .user-box {
   position: relative;
   width: 46px;
@@ -106,7 +72,7 @@
 .navigation .user-box .username {
   font-weight: 500;
   margin-left: 0.5rem;
-  font-size: 1rem;
+  font-size: var(--font-size16);
   white-space: nowrap;
   color: var(--hover-color);
 }
@@ -179,7 +145,7 @@
   align-items: center;
   gap: 10px;
   margin: 20px 0;
-  font-size: 1rem;
+  font-size: var(--font-size16);
   text-decoration: none;
   color: var(--gray);
 }
@@ -222,7 +188,7 @@
   background: var(--hover-color2);
   border: 1px solid var(--hover-color2);
   font-size: 15px;
-  font-weight: 500;
+  font-family: var(--h-font-400);
   color: #fff;
   border-radius: 30px;
   transition: 0.4s ease-in-out;
@@ -260,7 +226,6 @@
   background-color: #fff;
   margin: auto;
   width: 100%;
-  /* overflow-x: hidden; */
 }
 
 .mainheader.is-sticky {
@@ -299,7 +264,7 @@
 }
 
 .main-header_wrapper {
-  border-top: 2px solid var(--bg-white-100);
+  border-top: var(--borderGrafy);
   padding: 1rem 0;
   display: flex;
   justify-content: space-between;
@@ -326,12 +291,12 @@
   padding: 1rem 0.5rem;
   font-size: 17px;
   color: var(--main-color);
-  font-weight: 500;
+  font-family: var(--h-font-500);
   position: relative;
   transition: 0.4s ease-in-out;
 }
 
-.main-header_wrapper .nav-links .nav-link:not(.dropdown_c) a::after {
+.main-header_wrapper .nav-links .nav-link a::after {
   content: "";
   position: absolute;
   bottom: 0px;
@@ -373,7 +338,7 @@
   position: absolute;
   left: 0px;
   top: 20px;
-  display: block;
+  display: none;
   list-style: none;
   width: 240px;
   background: #fff;
@@ -417,7 +382,7 @@
   background: #000;
   height: 2px;
   width: 20px;
-  border-radius: 4px;
+  border-radius: var(--border-radius6px);
 }
 
 .main-header_wrapper .menu-icon__line::before,
@@ -426,7 +391,7 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  border-radius: 4px;
+  border-radius: var(--border-radius6px);
   background: #000;
   transition: background 0.8s ease;
 }
@@ -657,7 +622,7 @@
 
 #search-wrapper {
   display: flex;
-  border: 1px solid var(--bg-white-100);
+  border: var(--borderGrafy);
   align-items: stretch;
   border-radius: 50px;
   background-color: #fff;
@@ -709,14 +674,8 @@
   z-index: -1;
 }
 
-.footer_top {
-}
-
-.footer_heading {
-}
-
 .footer_heading h1 {
-  font-size: 18px;
+  font-size: var(--font-size18);
   color: var(--hover-color);
   margin-bottom: 1rem;
   letter-spacing: 1px;
@@ -740,7 +699,7 @@
   transition: 0.4s ease-in-out;
 }
 .footer_contact_menu ul li a {
-  font-weight: 600;
+  font-family: var(--h-font-500);
   color: var(--hover-color) !important;
 }
 .footer_menu ul li span {
