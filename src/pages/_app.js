@@ -1,5 +1,6 @@
-import localFont from "next/font/local";
 import Head from "next/head";
+import localFont from "next/font/local";
+import NextNProgress from "nextjs-progressbar";
 
 // Fonts
 const pacificoRegularFont = localFont({
@@ -73,6 +74,11 @@ export default function App({ Component, pageProps }) {
           --p-font-400: ${montserratRegularFont.style.fontFamily};
         }
       `}</style>
+      <NextNProgress
+        color="var(--hover-color2)"
+        height={4}
+        options={{ showSpinner: false }}
+      />
       <Component {...pageProps} />
     </>
   );

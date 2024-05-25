@@ -4,7 +4,6 @@ import fullLogoImage from "@/assets/static/media/vb.logo.svg";
 import shortLogoImage from "@/assets/static/media/vb.short-logo.png";
 import avatarImage from "@/assets/static/media/avatar.jpg";
 import Link from "next/link";
-import DropdownMenu from "./DropdownMenu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faExpand,
@@ -15,8 +14,10 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { faBookmark, faHeart } from "@fortawesome/free-regular-svg-icons";
+import { setConditionalClassName, useNavigation } from "@/utils/helpers";
 
 export default function Header() {
+  const { isPagePathName } = useNavigation();
   const [isStickyHeader, setIsStickyHeader] = useState(false);
   const [showUserFullName, setShowUserFullName] = useState(false);
 
@@ -166,33 +167,47 @@ export default function Header() {
                       <span className="menu-icon__line" />
                     </label>
                     <div className="sticky_logo ">
-                      <a href="index.html">
+                      <Link href="/">
                         <Image
                           src={shortLogoImage}
                           alt="vromonbilash logo"
                           priority
                         />
-                      </a>
+                      </Link>
                     </div>
                     <ul className="nav-links">
                       <li className="nav-link">
-                        <Link className="menu_active" href="/about">
+                        <Link
+                          className={setConditionalClassName(
+                            isPagePathName(["/about", "/"]),
+                            "menu_active"
+                          )}
+                          href="/"
+                        >
                           About VromonBilash
                         </Link>
                       </li>
-                      <li className="nav-link">
+                      {/* <li className="nav-link">
                         <a href="#">Packages</a>
-                      </li>
+                      </li> */}
                       <li className="nav-link">
-                        <a href="#">Resorts</a>
+                        <Link
+                          href="/resorts"
+                          className={setConditionalClassName(
+                            isPagePathName("/resorts"),
+                            "menu_active"
+                          )}
+                        >
+                          Resorts
+                        </Link>
                       </li>
-                      <DropdownMenu />
+                      {/* <DropdownMenu />
                       <li className="nav-link">
                         <a href="destination.html">Destination</a>
                       </li>
                       <li className="nav-link">
                         <a href="#">Contact</a>
-                      </li>
+                      </li> */}
                       <div className="common_btn_style d-block d-lg-none">
                         <a href="#">Sign In</a>
                         <a href="#">Sign Up</a>

@@ -52,3 +52,29 @@
     height: auto !important;
   }
 } */
+/* ================================>> */
+/* ==================================NProgress Settings css */
+/* ================================>> */
+
+#nprogress .bar {
+  z-index: 999999999999999 !important;
+}
+
+/* ================================>> */
+/* ==================================Others */
+/* ================================>> */
+.resort_list_section .list-tab .mobile-btn {
+  display: block !important;
+}
+.resort_list_section .list-tab .resort_list_filtering_sidebar_wrapper {
+  display: none !important;
+}
+@media (min-width: 575.98px) {
+  .resort_list_section .list-tab .mobile-btn {
+    display: none !important;
+  }
+
+  .resort_list_section .list-tab .resort_list_filtering_sidebar_wrapper {
+    display: block !important;
+  }
+}

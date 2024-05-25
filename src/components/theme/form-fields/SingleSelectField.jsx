@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 export default function SingleSelectField({
   label,
   selectText = "Select any item",
+  zIndex = 10,
 }) {
   const dropdownRef = useRef(null);
   const searchBoxRef = useRef(null);
@@ -65,7 +66,7 @@ export default function SingleSelectField({
       className="input_form_style"
       style={{
         position: "relative",
-        zIndex: "10",
+        zIndex,
       }}
     >
       <label htmlFor="">{label}</label>
@@ -92,7 +93,7 @@ export default function SingleSelectField({
 
           <div className="dropdown">
             <div ref={searchBoxRef} className="dropdown-select">
-              Afghanistan
+              {selectText}
             </div>
             {showDropdown ? (
               <motion.div

@@ -98,9 +98,9 @@ export default function HomeFeaturesSection() {
                 <swiper-container
                   ref={swiperElRef}
                   init="false"
-                  class="swiper-wrapper"
+                  className="swiper-wrapper"
                 >
-                  <swiper-slide class="features_swiper-slide swiper-slide">
+                  <swiper-slide className="features_swiper-slide swiper-slide">
                     <div className="features_swiper-slide-wrapper">
                       <ThemeImage
                         src={f1Jpg}
@@ -125,7 +125,7 @@ export default function HomeFeaturesSection() {
                       </div>
                     </div>
                   </swiper-slide>
-                  <swiper-slide class="features_swiper-slide swiper-slide">
+                  <swiper-slide className="features_swiper-slide swiper-slide">
                     <div className="features_swiper-slide-wrapper">
                       <ThemeImage
                         src={f2Jpg}
@@ -150,7 +150,7 @@ export default function HomeFeaturesSection() {
                       </div>
                     </div>
                   </swiper-slide>
-                  <swiper-slide class="features_swiper-slide swiper-slide">
+                  <swiper-slide className="features_swiper-slide swiper-slide">
                     <div className="features_swiper-slide-wrapper">
                       <ThemeImage
                         src={f3Jpg}
@@ -175,7 +175,7 @@ export default function HomeFeaturesSection() {
                       </div>
                     </div>
                   </swiper-slide>
-                  <swiper-slide class="features_swiper-slide swiper-slide">
+                  <swiper-slide className="features_swiper-slide swiper-slide">
                     <div className="features_swiper-slide-wrapper">
                       <ThemeImage
                         src={f4Jpg}
@@ -200,7 +200,7 @@ export default function HomeFeaturesSection() {
                       </div>
                     </div>
                   </swiper-slide>
-                  <swiper-slide class="features_swiper-slide swiper-slide">
+                  <swiper-slide className="features_swiper-slide swiper-slide">
                     <div className="features_swiper-slide-wrapper">
                       <ThemeImage
                         src={f5Jpg}

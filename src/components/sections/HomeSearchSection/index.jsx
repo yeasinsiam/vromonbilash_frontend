@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
+import searchGif from "@/assets/static/media/search.gif";
 import { AnimatePresence, motion } from "framer-motion";
 import SingleSelectField from "@/components/theme/form-fields/SingleSelectField";
 import DateRangeField from "@/components/theme/form-fields/DateRangeField";
@@ -7,7 +8,6 @@ import DateRangeField from "@/components/theme/form-fields/DateRangeField";
 // import DateRangePicker from "react-daterange-picker";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGift, faHotel } from "@fortawesome/free-solid-svg-icons";
-import searchGif from "@/assets/static/media/search.gif";
 import GuestAndRoomsField from "@/components/theme/form-fields/GuestAndRoomsField";
 
 export default function HomeSearchSection() {
