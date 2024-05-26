@@ -18,7 +18,7 @@ export default function AboutPage() {
     <div>
       <Link href="/">Go Back To Home Page</Link>
       <br />
-      <div className="home-search-checkin-checkout-calender">
+      <div className="checkin-checkout-calender">
         <DateRange
           onChange={(item) => setState([item.selection])}
           showSelectionPreview={false}

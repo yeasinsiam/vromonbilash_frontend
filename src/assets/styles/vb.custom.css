@@ -1,4 +1,4 @@
-.home-search-checkin-checkout-calender {
+.checkin-checkout-calender {
   padding: 0px 10px;
   padding-top: 0px;
   width: fit-content;
@@ -11,8 +11,21 @@
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
 }
 
+.rdrCalendarWrapper {
+  width: 100%;
+}
+
 .rdrDayToday .rdrDayNumber span::after {
   background-color: #312783 !important;
+}
+
+@media (max-width: 575.98px) {
+  .checkin-checkout-calender {
+    width: 100%;
+  }
+  .rdrMonth {
+    width: 100%;
+  }
 }
 
 /* ================================>> */
@@ -76,5 +89,14 @@
 
   .resort_list_section .list-tab .resort_list_filtering_sidebar_wrapper {
     display: block !important;
+  }
+}
+@media (max-width: 575.98px) {
+  .resort_list_section .my_nav_tab {
+    display: none !important;
+  }
+
+  .banner_right__image .image-container {
+    height: 450px;
   }
 }

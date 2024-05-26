@@ -39,10 +39,7 @@ export default function DateRangeField({
           exit={{ y: -10, opacity: 0 }}
           transition={{ duration: 0.2 }}
         >
-          <div
-            ref={dropdownRef}
-            className="home-search-checkin-checkout-calender"
-          >
+          <div ref={dropdownRef} className="checkin-checkout-calender">
             <DateRange
               onChange={(item) => setDateRange([item.selection])}
               showSelectionPreview={false}
