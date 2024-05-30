@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-export default function GuestAndRoomsField() {
+export default function GuestAndRoomsField({ dropdownZIndex = 10 }) {
   const dropdownRef = useRef(null);
   const buttonRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -88,6 +88,7 @@ export default function GuestAndRoomsField() {
               ref={dropdownRef}
               className={`guests-input__options open`}
               // className={`guests-input__options ${showDropdown ? "open" : ""}`}
+              style={{ zIndex: dropdownZIndex }}
             >
               <div>
                 <span
