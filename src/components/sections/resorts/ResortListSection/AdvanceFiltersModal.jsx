@@ -62,6 +62,7 @@ export default function AdvanceFiltersModal({
                     <SingleSelectField
                       label="Destination"
                       selectText="Select your country"
+                      zIndex={30}
                     />
                   </div>
                 </div>
@@ -70,6 +71,7 @@ export default function AdvanceFiltersModal({
                     <SingleSelectField
                       label="Popular Type"
                       selectText="Select your type"
+                      zIndex={20}
                     />
                   </div>
                 </div>

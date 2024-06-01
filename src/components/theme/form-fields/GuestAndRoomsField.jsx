@@ -3,7 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-export default function GuestAndRoomsField({ dropdownZIndex = 10 }) {
+export default function GuestAndRoomsField({
+  dropdownZIndex = 10,
+  zIndex = 10,
+}) {
   const dropdownRef = useRef(null);
   const buttonRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -64,7 +67,13 @@ export default function GuestAndRoomsField({ dropdownZIndex = 10 }) {
   };
 
   return (
-    <div className="input_form_style">
+    <div
+      className="input_form_style"
+      style={{
+        position: "relative",
+        zIndex,
+      }}
+    >
       <label htmlFor="">Guests &amp; Rooms</label>
       <div className="booking-form__input guests-input">
         <button

@@ -7,6 +7,7 @@ export default function DateRangeField({
   label,
   startDate = moment().format(),
   endDate = moment().add(7, "day").format(),
+  zIndex = "10",
 }) {
   const { inputRef, dropdownRef, isMobile, showDropdown } = useInitDateRange();
 
@@ -19,7 +20,7 @@ export default function DateRangeField({
   ]);
 
   return (
-    <div className="position-relative" style={{ zIndex: "10" }}>
+    <div className="position-relative" style={{ zIndex }}>
       <div className="input_form_style ">
         <label htmlFor="">{label}</label>
         <input
