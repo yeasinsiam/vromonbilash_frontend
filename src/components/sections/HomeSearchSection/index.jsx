@@ -84,10 +84,14 @@ export default function HomeSearchSection() {
                                   <SingleSelectField
                                     label="Location"
                                     selectText=" Select your country"
+                                    zIndex={30}
                                   />
                                 </div>
                                 <div className="col-md-5 col-lg-3">
-                                  <DateRangeField label="Check in - Out" />
+                                  <DateRangeField
+                                    label="Check in - Out"
+                                    zIndex={20}
+                                  />
                                 </div>
                                 <div className="col-md-5 col-lg-3">
                                   <GuestAndRoomsField />
@@ -121,6 +125,7 @@ export default function HomeSearchSection() {
                                   <SingleSelectField
                                     label="Location"
                                     selectText=" Select your country"
+                                    zIndex={20}
                                   />
                                 </div>
                                 <div className="col-md-12 col-lg-5">
