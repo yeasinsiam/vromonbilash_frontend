@@ -17,6 +17,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "date-fns": "^3.6.0",
     "framer-motion": "^11.1.9",
+    "glightbox": "^3.3.0",
     "moment": "^2.30.1",
     "next": "14.2.3",
     "nextjs-progressbar": "^0.0.16",

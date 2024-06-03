@@ -1,4 +1,4 @@
-// import CopyPlugin from "copy-webpack-plugin";
+import CopyPlugin from "copy-webpack-plugin";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -12,22 +12,28 @@ const nextConfig = {
     ],
   },
 
-  // webpack: (
-  //   config,
-  //   { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }
-  // ) => {
-  //   config.plugins.push(
-  //     new CopyPlugin({
-  //       patterns: [
-  //         {
-  //           from: "./node_modules/swiper/swiper-bundle.min.js",
-  //           to: "./public/lib/swiper/",
-  //         },
-  //       ],
-  //     })
-  //   );
-  //   return config;
-  // },
+  webpack: (
+    config,
+    { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }
+  ) => {
+    config.plugins.push(
+      new CopyPlugin({
+        patterns: [
+          // Swiper js
+          {
+            from: "./node_modules/swiper/swiper-bundle.min.js",
+            to: "./../public/assets/js/",
+          },
+          // glightbox
+          {
+            from: "./node_modules/glightbox/dist/js/glightbox.min.js",
+            to: "./../public/assets/js/",
+          },
+        ],
+      })
+    );
+    return config;
+  },
 };
 
 export default nextConfig;
