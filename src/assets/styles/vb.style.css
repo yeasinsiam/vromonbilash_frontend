@@ -2362,6 +2362,13 @@
   border-bottom: 1px solid #ced8ee;
 }
 
+.room_popup_title_wrapper h1 {
+  padding-bottom: 1rem;
+  font-size: var(--font-size20) !important;
+  font-weight: 700;
+  border-bottom: 1px solid #ced8ee;
+}
+
 .about_resort_details_wrapper .about_resort_details_title .select_room_title {
   padding-bottom: 0;
   margin-bottom: 0;
@@ -2428,7 +2435,7 @@
 }
 
 .resort_details_sub_title h1 {
-  font-weight: 700;
+  font-family: var(--h-font-600);
   font-size: 17px;
   letter-spacing: 1px;
 }
@@ -2458,7 +2465,7 @@
   margin: 1rem 0;
   padding: 10px;
   background: #eaf4ff;
-  border: 1px solid #d1e2f5;
+  border: 1px solid #d8dbdf;
   border-radius: 10px;
   box-shadow: 0 0 5px 1px rgba(255, 246, 246);
   grid-gap: 1rem;
@@ -2524,7 +2531,7 @@
 @keyframes blueShodow {
   0%,
   100% {
-    box-shadow: 1px 0px 10px 4px var(--hover-color),
+    box-shadow: 1px 0px 10px 2px var(--hover-color),
       inset 0px 0px 10px var(--hover-color);
   }
 
@@ -2533,9 +2540,12 @@
       inset 0px 0px 0px rgba(255, 255, 255, 0);
   }
 }
-
 .modal-dialog {
   padding: 40px;
+}
+
+.select_room_modal_dialog {
+  max-width: 580px;
 }
 
 .room_modal_dialog {
@@ -2553,8 +2563,8 @@ h1.room_select_popup_title {
   font-size: var(--font-size16);
 }
 
-.modal_body .hag_room_number {
-  font-size: var(--font-size18);
+.popup_select_room_guest_type_wrapper_main h2 {
+  font-size: var(--font-size16);
   color: var(--hover-color);
 }
 
@@ -2595,6 +2605,10 @@ h1.room_select_popup_title {
   box-shadow: 0px -4px 0px 0px rgba(0, 0, 0, 0.1);
 }
 
+.popup_select_room_guest_type_wrapper_main > .form-group.floating-group {
+  width: 25%;
+}
+
 .select_room_popup_field option {
   font-size: 12px;
 }
@@ -2602,6 +2616,22 @@ h1.room_select_popup_title {
 .room_popup_slider_content_wrapper h1 {
   font-size: 32px;
   margin: 1rem 0;
+}
+
+.room_popup_slider_content_wrapper
+  .room_img_slider_big
+  .swiper-slide
+  .card-image
+  img {
+  height: auto;
+}
+
+.room_cancel_add_wrapper .cencel_btn {
+}
+
+.room_cancel_add_wrapper .add_btn {
+  background: var(--hover-color);
+  border: none;
 }
 
 /* ---------- Select Room Css  --------- */

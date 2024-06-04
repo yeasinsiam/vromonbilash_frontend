@@ -10,8 +10,8 @@ export default function Document() {
         <NextScript />
         {/* Loading External Script dependencies */}
         <Script
-          // src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"
-          src="/assets/js/swiper-bundle.min.js"
+          src="https://cdn.jsdelivr.net/npm/swiper@11.1.3/swiper-element-bundle.min.js"
+          // src="/assets/js/swiper-bundle.min.js"
           strategy="beforeInteractive"
         />
         <Script

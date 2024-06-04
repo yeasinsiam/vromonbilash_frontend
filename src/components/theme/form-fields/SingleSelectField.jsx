@@ -1,11 +1,32 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
-export default function SingleSelectField({
+export default function SingleSelectField({ isSearchAble = true, ...props }) {
+  if (isSearchAble) return <SearchableSelectField {...props} />;
+  return (
+    <div
+      className="form-group floating-group input_form_style"
+      style={{
+        position: "relative",
+        zIndex: props.zIndex,
+      }}
+    >
+      <label>{props.label}</label>
+      <select className="form-control filter_room_popup_field">
+        <option value="1" selected>
+          AC
+        </option>
+        <option value="2">Non AC</option>
+      </select>
+    </div>
+  );
+}
+
+const SearchableSelectField = ({
   label,
   selectText = "Select any item",
   zIndex = 10,
-}) {
+}) => {
   const dropdownRef = useRef(null);
   const searchBoxRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -920,4 +941,4 @@ export default function SingleSelectField({
       </div>
     </div>
   );
-}
+};
