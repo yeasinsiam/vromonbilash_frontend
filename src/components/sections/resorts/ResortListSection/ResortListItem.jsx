@@ -12,6 +12,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ThemeImage from "@/components/theme/ThemeImage";
 import { setConditionalClassName } from "@/utils/helpers";
+import Link from "next/link";
 
 export default function ResortListItem({ view = "grid" }) {
   const swiperElRef = useRef();
@@ -133,7 +134,12 @@ export default function ResortListItem({ view = "grid" }) {
             </h1>
           </div>
           <div className="resort_view_more_btn">
-            <a href="resort-details.html">
+            <Link
+              href={{
+                pathname: "/resorts/[slug]",
+                query: { slug: "my-resort" },
+              }}
+            >
               View Details{" "}
               <span>
                 <Image
@@ -142,7 +148,7 @@ export default function ResortListItem({ view = "grid" }) {
                   style={{ height: "auto" }}
                 />
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

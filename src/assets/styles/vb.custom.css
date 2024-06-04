@@ -1,3 +1,49 @@
+/* header css */
+.navigation {
+  z-index: 999999;
+}
+
+.photos-grid-container .main-photo .image-container {
+  max-width: 100%;
+  display: block;
+  height: 430px;
+  border-radius: 10px;
+}
+
+.photos-grid-container .sub .image-container {
+  height: 210px;
+  border-radius: 10px;
+}
+
+@media (max-width: 575.98px) {
+  .photos-grid-container .main-photo .image-container {
+    height: 300px;
+  }
+
+  .photos-grid-container .sub .image-container {
+    height: 150px;
+  }
+}
+
+.c_star_rating .list-inline-item {
+  width: fit-content;
+}
+
+.room_modal_dialog {
+  top: 0;
+}
+
+.room_modal_dialog .card-image .image-container {
+  height: 500px;
+}
+
+@media (max-width: 480px) {
+  .room_modal_dialog .card-image .image-container {
+    height: 300px;
+  }
+}
+
+/* Calender  */
 .checkin-checkout-calender {
   padding: 0px 10px;
   padding-top: 0px;

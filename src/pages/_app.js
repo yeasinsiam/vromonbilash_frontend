@@ -44,6 +44,9 @@ config.autoAddCss = false;
 // Swiper
 // import "swiper/swiper-bundle.css";
 
+// glightbox
+import "glightbox/dist/css/glightbox.css";
+
 import "@/assets/styles/bootstrap.css";
 import "@/assets/styles/vb.theme.css";
 import "@/assets/styles/skeletons-loading.css";
