@@ -38,6 +38,9 @@ export default function RoomList({
       />
 
       {/* Room Item  */}
+      <button className="check_availability_btn w-100 mt-5" type="button">
+        Load more rooms
+      </button>
     </div>
   );
 }

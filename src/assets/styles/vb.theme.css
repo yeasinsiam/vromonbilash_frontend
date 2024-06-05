@@ -60,6 +60,7 @@ p {
 
 html,
 body {
+  display: initial;
   overflow-x: hidden !important;
   width: 100vw !important;
 }

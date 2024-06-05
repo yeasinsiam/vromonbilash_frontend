@@ -114,7 +114,14 @@ export default function ResortListItem({ view = "grid" }) {
           </div>
         </div>
         <h1 className="resort_title">
-          <a href="resort-details.html">Courtyard by Marriott New York</a>
+          <Link
+            href={{
+              pathname: "/resorts/[slug]",
+              query: { slug: "my-resort" },
+            }}
+          >
+            Courtyard by Marriott New York
+          </Link>
         </h1>
         <ul className="resort_facelity_list ps-0">
           <li className="list-inline-item">Air Conditioning</li>

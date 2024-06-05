@@ -43,6 +43,10 @@
   }
 }
 
+.resort_details_right_price_body {
+  top: 5.5rem;
+}
+
 /* Calender  */
 .checkin-checkout-calender {
   padding: 0px 10px;
