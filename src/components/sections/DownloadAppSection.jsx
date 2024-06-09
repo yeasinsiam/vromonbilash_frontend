@@ -1,6 +1,6 @@
 import Image from "next/image";
-import googlePlaySvg from "@/assets/static/media/google-play.svg";
-import appStoreSvg from "@/assets/static/media/app-store.svg";
+import googlePlaySvg from "@/assets/static/media/google-play-7Lsm2fJ4.svg";
+import appStoreSvg from "@/assets/static/media/app-store-CfYJWrSW.svg";
 import backgroundPng from "@/assets/static/media/d_bg.png";
 import {
   faHandHoldingDollar,

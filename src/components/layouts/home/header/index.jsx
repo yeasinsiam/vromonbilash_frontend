@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import fullLogoImage from "@/assets/static/media/vb.logo.svg";
-import shortLogoImage from "@/assets/static/media/vb.short-logo.png";
-import avatarImage from "@/assets/static/media/avatar.jpg";
+import shortLogoImage from "@/assets/static/media/stivky_logo-removebg-preview.png";
+import avatarImage from "@/assets/static/my-media/avatar.jpg";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

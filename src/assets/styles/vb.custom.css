@@ -228,6 +228,10 @@
   /* position: relative !important;
   height: unset !important; */
 }
+.filla {
+  position: relative !important;
+  height: unset !important;
+}
 
 .image-container .skeleton-wrapper {
   width: 100%;

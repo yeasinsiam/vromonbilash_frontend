@@ -1,7 +1,7 @@
 import Image from "next/image";
-import icon8Grid50Png from "@/assets/static/media/icons/icons8-grid-50.png";
-import icon8List50Png from "@/assets/static/media/icons/icons8-list-50.png";
-import icon8FilterGif from "@/assets/static/media/icons/icons8-filter.gif";
+import icon8Grid50Png from "@/assets/static/media/all_icon/icons8-grid-50.png";
+import icon8List50Png from "@/assets/static/media/all_icon/icons8-list-50.png";
+import icon8FilterGif from "@/assets/static/media/all_icon/icons8-filter.gif";
 import ResortListItem from "./ResortListItem";
 import AdvanceFiltersModal from "./AdvanceFiltersModal";
 import { useState } from "react";

@@ -1,4 +1,4 @@
-import quickServiceBannerJpg from "@/assets/static/media/quick-service-banner.jpg";
+import quickServiceBannerJpg from "@/assets/static/media/01-BquoufbW.jpg";
 import starPng from "@/assets/static/media/star.png";
 import Image from "next/image";
 import ThemeImage from "../theme/ThemeImage";

@@ -5,7 +5,7 @@ import resort2jpg from "@/assets/static/media/resort_img/r2.jpg";
 import resort3jpg from "@/assets/static/media/resort_img/r3.jpg";
 import resort4jpg from "@/assets/static/media/resort_img/r4.jpg";
 import resort5jpg from "@/assets/static/media/resort_img/r5.jpg";
-import arrowRightPng from "@/assets/static/media/icons/arrow_right.png";
+import arrowRightPng from "@/assets/static/media/all_icon/arrow_right.png";
 import ecoPng from "@/assets/static/media/eco.png";
 
 import { faStar } from "@fortawesome/free-solid-svg-icons";

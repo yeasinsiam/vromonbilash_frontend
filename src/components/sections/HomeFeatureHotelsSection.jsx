@@ -3,7 +3,7 @@ import ThemeImage from "../theme/ThemeImage";
 import hotel1jpg from "@/assets/static/media/hotel1.jpg";
 import hotel2jpg from "@/assets/static/media/hotel2.jpg";
 import hotel3jpg from "@/assets/static/media/hotel3.jpg";
-import hotel4jpg from "@/assets/static/media/hotel4.jpg";
+import hotel4jpg from "@/assets/static/media/hotel;4.jpg";
 
 export default function HomeFeatureHotelsSection() {
   return (
