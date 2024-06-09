@@ -1,3 +1,131 @@
+/* ================== Banner Style Css Start =================== */
+.mainHeading__image:before,
+.mainHeading__image:after {
+  background-image: none;
+}
+
+.mainHeading__image:after {
+  background-image: none;
+}
+
+.mainHeading__image .image-container {
+  border-radius: 20px;
+  height: 600px;
+}
+
+/* ===========  Search  Location Start============== */
+
+.select_and_search_form .custom-dropdown-menu {
+  display: block;
+  margin-top: 4px;
+  border: 1px solid #ddd;
+  top: auto;
+  transition: none;
+  padding: 1rem;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 999999;
+  border-radius: var(--border-radius10px);
+  background-color: #fff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.select_and_search_form .dropdown-menu-item {
+  margin: 2px 0px;
+}
+
+/* ============ Form Input Field Style Css =============== */
+
+.guests-input__options {
+  margin-top: 4px;
+}
+
+/* ================ About VB Section Style Css Start  ================== */
+.about_vromonbilash .image-container {
+  border-radius: 20px;
+  height: 360px;
+}
+
+/* ==================== Features Sec Style Css Start ====================== */
+
+.features_swiper-slide::before {
+  z-index: 1;
+}
+
+.features_swiper-slide-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius10px);
+  overflow: hidden;
+  height: 100%;
+}
+
+.features_swiper-slide-wrapper .image-container {
+  height: 384px;
+}
+
+.features_swiper-slide .slide-content {
+  z-index: 2;
+}
+
+.swiper-pagination {
+  bottom: 5px;
+}
+
+/* =================== Quick Services For Holiday Css Start ================== */
+.qsfh_left_img .image-container {
+  width: 100%;
+  height: 600px;
+  border-radius: 20px;
+  animation: updown 3s linear infinite;
+}
+
+/* =================== Features Hotel Section Style Css Start  ================== */
+
+.features_hotel_item:hover .features_hotel_img .image-container {
+  transform: scale(1.2);
+}
+
+.features_hotel_img .image-container {
+  height: 460px;
+  border-radius: 20px;
+  transition: 0.4s ease-in-out;
+}
+
+/*  ================== Download Apps Section Style Css Start ================== */
+
+.download_app_wrapper_bg {
+  overflow: hidden;
+}
+
+/* ================= Breadcrumb Style Css Start ================== */
+.breadcrumb_bg_wrapper {
+  overflow: hidden;
+}
+
+/* =============== Resort List Css Style Start ============== */
+
+.card-image .image-container {
+  width: 100%;
+  height: 270px;
+  border-radius: 8px;
+}
+
+/* =============== Custom modal ============== */
+/* .fade:not(.show) {
+  visibility: visible !important;
+  opacity: 1 !important;
+} */
+
+/* =================================================================== */
+/* =================================================================== */
+/* =================================================================== */
+/* =================================================================== */
+
 /* header css */
 .navigation {
   z-index: 999999;
@@ -93,6 +221,10 @@
   object-fit: cover;
   width: 100% !important;
   height: 100% !important;
+  border-radius: 0;
+  animation: none;
+  transition: none;
+  transform: none;
   /* position: relative !important;
   height: unset !important; */
 }

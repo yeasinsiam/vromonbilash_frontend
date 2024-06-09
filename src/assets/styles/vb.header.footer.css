@@ -58,6 +58,7 @@
   transition-delay: 0s, 0.75s;
   z-index: 9999999;
 }
+
 .navigation .user-box {
   position: relative;
   width: 46px;
@@ -237,18 +238,23 @@
   animation: slideDown 0.5s ease-out;
   z-index: 999999;
 }
+
 .sticky_logo {
   display: none;
 }
+
 .sticky_logo a img {
   width: 45px;
 }
+
 .mainheader.is-sticky .sticky_logo {
   display: block;
 }
+
 .mainheader.is-sticky .sticky_logo a img {
   width: 40px;
 }
+
 .mainheader.is-sticky .main-header_wrapper .nav-links .nav-link a::after {
   display: none;
 }
@@ -381,7 +387,7 @@
   position: relative;
   background: #000;
   height: 2px;
-  width: 20px;
+  width: 30px;
   border-radius: var(--border-radius6px);
 }
 
@@ -397,11 +403,11 @@
 }
 
 .main-header_wrapper .menu-icon__line::before {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
 }
 
 .main-header_wrapper .menu-icon__line::after {
-  transform: translateY(5px);
+  transform: translateY(8px);
 }
 
 .main-header_wrapper .menu-btn {
@@ -629,6 +635,7 @@
   overflow: hidden;
   max-width: 400px;
 }
+
 #search-wrapper input::selection {
   background-color: #fff;
 }
@@ -662,6 +669,7 @@
   position: relative;
   z-index: 1;
 }
+
 .vb_footer::after {
   content: "";
   position: absolute;
@@ -691,6 +699,7 @@
   height: 2px;
   background: var(--hover-color);
 }
+
 .footer_menu ul li a {
   display: inline-block;
   color: var(--main-color);
@@ -698,10 +707,12 @@
   margin: 10px 0;
   transition: 0.4s ease-in-out;
 }
+
 .footer_contact_menu ul li a {
   font-family: var(--h-font-500);
   color: var(--hover-color) !important;
 }
+
 .footer_menu ul li span {
   color: var(--text-white-100);
 }
@@ -737,6 +748,7 @@
 .footer_payment_gatway img {
   width: 100%;
 }
+
 .payment_getways img {
   width: 100%;
 }

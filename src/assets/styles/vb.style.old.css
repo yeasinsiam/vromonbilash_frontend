@@ -106,7 +106,7 @@
   width: 100%;
   height: 0%;
   top: 100%;
-  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  /* background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%); */
   opacity: 1;
   left: 0;
 }
@@ -123,15 +123,15 @@
 }
 
 .mainHeading__image:after {
-  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  /* background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%); */
   height: 100%;
   top: 0;
   opacity: 0.2;
 }
 
-.mainHeading__image img {
-  width: 100%;
-  height: 100%;
+.mainHeading__image .image-container {
+  border-radius: 20px;
+  height: 600px;
 }
 
 .cta {
@@ -325,7 +325,6 @@
   font-family: var(--h-font-700);
   font-size: var(--font-size20);
 }
-
 .banner_image_features h4 {
   font-size: 15px;
 }
@@ -383,11 +382,13 @@
   cursor: pointer;
 }
 
-.select_and_search_form .dropdown-menu {
+.select_and_search_form .custom-dropdown-menu {
   padding: 1rem;
   position: absolute;
-  display: none;
-  top: 50px;
+  margin-top: 4px;
+  display: block;
+  border: 1px solid #ddd;
+  /* top: 50px; */
   left: 0;
   width: 100%;
   z-index: 999999;
@@ -395,7 +396,7 @@
   background-color: #fff;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease-in-out;
+  /* transition: all 0.3s ease-in-out; */
 }
 
 .select_and_search_form .dropdown-menu-inner {
@@ -423,6 +424,7 @@
   cursor: pointer;
   user-select: none;
   padding: 6px;
+  margin: 2px 0px;
   background-color: #fff;
   transition: all 0.2s ease-in-out;
   border-radius: var(--border-radius10px);
@@ -593,6 +595,7 @@
   -webkit-transition: all 0.1s linear;
   transition: all 0.1s linear;
   z-index: 1;
+  margin-top: 4px;
 }
 
 .guests-input__options.open {
@@ -713,9 +716,9 @@
   padding: 80px 0;
 }
 
-.vb_about_banner img {
-  width: 100%;
+.about_vromonbilash .image-container {
   border-radius: 20px;
+  height: 360px;
 }
 
 .about_vb_counter {
@@ -726,15 +729,15 @@
 }
 
 .about_vb_counter h1 {
-  font-size: var(--font-size26);
-  font-family: var(--h-font-500);
+  font-size: 32px;
+  font-weight: 700;
 }
 
 .about_vb_counter span {
-  color: #999999;
+  color: #ddd;
 }
 
-/* ================ About VB Section Style Css Start  ================== */
+/* ================ About VB Section Style Css End  ================== */
 
 /* ==================== Features Sec Style Css Start ====================== */
 .features_section_main {
@@ -806,11 +809,12 @@
   }
 }
 
+/* 
 .features_swiper {
   position: relative;
   width: 100%;
   z-index: 2;
-}
+} */
 
 .features_swiper-slide {
   background-size: cover;
@@ -845,8 +849,22 @@
   bottom: 0px;
   width: 100%;
   height: 120px;
-  background: rgba(5, 0, 32, 0.4);
   border-radius: var(--border-radius10px);
+  background: rgba(5, 0, 32, 0.4);
+  z-index: 1;
+}
+
+.features_swiper-slide-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius10px);
+  overflow: hidden;
+  height: 100%;
+}
+
+.features_swiper-slide-wrapper .image-container {
+  height: 384px;
 }
 
 .features_swiper-slide .features_price {
@@ -865,13 +883,18 @@
 }
 
 .features_swiper-slide .features_price span {
-  font-weight: var(--h-font-400);
-  font-size: var(--font-size14);
+  font-weight: 300;
+  font-size: 14px;
 }
 
 .features_swiper-slide .features_price h1 {
   font-family: var(--h-font-500);
   font-size: var(--font-size20);
+}
+
+.features_swiper-slide .features_price h1 span {
+  font-weight: 300;
+  font-size: 14px;
 }
 
 .features_swiper-slide .slide-content {
@@ -882,6 +905,7 @@
   transform: translate(-50%, -10px);
   width: 100%;
   color: #fff;
+  z-index: 2;
 }
 
 .features_swiper-slide .slide-content h3 {
@@ -899,7 +923,8 @@
 
 .swiper-pagination {
   position: relative;
-  bottom: -0.313rem;
+  /* bottom: -0.313rem; */
+  bottom: 5px;
   text-align: center;
   width: auto;
 }
@@ -953,8 +978,9 @@
   z-index: -1;
 }
 
-.qsfh_left_img img {
+.qsfh_left_img .image-container {
   width: 100%;
+  height: 600px;
   border-radius: 20px;
   animation: updown 3s linear infinite;
 }
@@ -1061,13 +1087,12 @@
   position: relative;
 }
 
-.features_hotel_item:hover .features_hotel_img img {
+.features_hotel_item:hover .features_hotel_img .image-container {
   transform: scale(1.2);
 }
 
-.features_hotel_img img {
-  width: 100%;
-  height: auto;
+.features_hotel_img .image-container {
+  height: 460px;
   border-radius: 20px;
   transition: 0.4s ease-in-out;
 }
@@ -1329,11 +1354,12 @@
 
 /*  ================== Download Apps Section Style Css Start ================== */
 .download_app_wrapper_bg {
-  padding: 60px 1rem;
+  padding: 60px 0;
   background: var(--bg-white-100);
   position: relative;
   z-index: 1;
   border-radius: var(--border-radius10px);
+  overflow: hidden;
 }
 
 .download_app_wrapper_bg::after {
@@ -1439,14 +1465,10 @@
 /* =================== Others Page's Style Css Start =================== */
 
 /* ================= Breadcrumb Style Css Start ================== */
-.breadcrumb_section1 {
-  margin-top: 70px;
-}
-
-.breadcrumb_wrapper {
-  padding: 0 2rem;
+.breadcrumb_section {
+  padding: 60px 0;
   background: #efd6f1;
-  border-radius: 10px;
+  margin-top: 70px;
 }
 
 .breadcrumb_wrapper h1 {
@@ -1467,11 +1489,6 @@
   color: var(--hover-color);
 }
 
-/* need to work here */
-.book_now_mobile_img img {
-  width: 250px;
-}
-
 .breadcrumb_bg_wrapper h1 {
   font-size: var(--font-size42);
   font-family: var(--h-font-600);
@@ -1485,6 +1502,7 @@
   border-radius: 10px;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 .breadcrumb_bg_wrapper::after {
@@ -1676,10 +1694,9 @@
   box-shadow: 0px -6px 8px -6px rgba(3, 3, 3, 0.2);
 }
 
-.card-image img {
+.card-image .image-container {
   width: 100%;
   height: 270px;
-  object-fit: cover;
   border-radius: 8px;
 }
 
@@ -1718,7 +1735,7 @@
 }
 
 .filter_checkbox ul li {
-  margin: 4px 0;
+  margin: 10px 0;
 }
 
 .filter_checkbox [type="checkbox"] {
@@ -2064,14 +2081,7 @@
 
 .vb_custom_modal {
   z-index: 9999999;
-  visibility: visible;
-  opacity: 1;
 }
-/* off this css */
-/* .fade:not(.show) {
-  visibility: hidden !important;
-  opacity: 0 !important;
-} */
 
 .resort_modal_dialog {
   top: 0;
@@ -2516,7 +2526,6 @@
   color: #fff;
   border-radius: var(--border-radius6px);
   animation: blueShodow 2s infinite;
-  font-size: 15px;
 }
 
 @keyframes blueShodow {
@@ -2531,7 +2540,6 @@
       inset 0px 0px 0px rgba(255, 255, 255, 0);
   }
 }
-
 .modal-dialog {
   padding: 40px;
 }
@@ -2960,10 +2968,6 @@ h1.room_select_popup_title {
   font-size: var(--font-size16);
 }
 
-.item-category-title span {
-  color: var(--hover-color);
-}
-
 .cart-item-price ul li {
   font-family: var(--h-font-400);
 }
@@ -3335,980 +3339,3 @@ h1.room_select_popup_title {
 /* ------------- Customer Review Comment Section Style Css End -------------- */
 
 /* ================== Resort Details Page Style Css End ====================== */
-
-/* ============= Checkout Page's Style Css Start ============== */
-.checkout_section {
-  padding: 80px 0;
-}
-
-.booking_information_wrapper {
-  margin-bottom: 1.5rem;
-  padding: 25px;
-  border: var(--borderLight);
-  border-radius: var(--border-radius10px);
-  box-shadow: 0 0 20px 2px rgba(2, 1, 1, 0.1);
-}
-
-.resort_title_for_checkout h1 {
-  font-size: 26px;
-}
-
-.resort_title_for_checkout h1 span {
-  color: var(--hover-color);
-}
-
-.resort_title_for_checkout span {
-  font-family: var(--h-font-500);
-  color: var(--hover-color);
-}
-
-.resort_title_for_checkout span em {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  line-height: 24px;
-  text-align: center;
-  background: var(--hover-color);
-  color: #fff;
-  border-radius: 50%;
-  font-size: 12px;
-}
-
-.booking_info_sec_title h1 {
-  margin-bottom: 0;
-  padding-bottom: 1rem;
-  font-family: var(--h-font-600);
-  font-size: var(--font-size20);
-  border-bottom: var(--borderLight);
-}
-
-.booking_information_content_wrapper {
-  margin-top: 1rem;
-}
-
-.room_invoice_number_wrapper {
-  margin-bottom: 1rem;
-  border: var(--borderLight);
-  padding: 0.5rem;
-  border-radius: var(--border-radius6px);
-}
-
-.room_chekinout_guest_info_wrapper {
-  padding: 0.5rem;
-  margin: 0 0 1rem 0;
-  border: var(--borderLight);
-  border-radius: var(--border-radius6px);
-}
-
-.resort_info_in_checkout_wrapper {
-  padding: 0.5rem;
-  border: var(--borderLight);
-  grid-gap: 1rem;
-  border-radius: var(--border-radius6px);
-}
-
-.room_invoice_table {
-  width: 100%;
-  border-collapse: collapse;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
-}
-
-.room_invoice_table th,
-td {
-  padding: 2px 10px;
-  border: var(--borderLight);
-  text-align: left;
-}
-
-.room_invoice_table th {
-  background-color: #eeeeee;
-  font-size: var(--font-size12);
-  color: var(--main-color);
-  color: #425483;
-}
-
-.room_invoice_table tr {
-  background-color: #fff;
-  transition: background-color 0.3s ease;
-  font-size: var(--font-size14);
-  color: #637498;
-}
-
-.hidden_btn {
-  display: none;
-}
-
-.total_invoice_price h4 {
-  margin-bottom: 0;
-  padding: 2px 10px;
-  font-size: var(--font-size14);
-  color: #637498;
-  border: var(--borderLight);
-  border-top: none;
-}
-
-.total_invoice_price h4 span {
-}
-
-.fadeShow {
-  animation: fadeIn 0.5s ease-in-out forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-#see-more-button {
-  padding: 2px 10px;
-  background-color: var(--hover-color);
-  color: #fff;
-  border: none;
-  border-radius: 0px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 15px;
-  border-radius: 0 0 6px 6px;
-}
-
-#see-more-button:hover {
-  background-color: var(--hover-color2);
-}
-
-#see-more-button.hidden_btn {
-  display: none;
-}
-
-.resort_info_in_checkout_wrapper .left_imgs {
-  width: 25%;
-}
-
-.resort_info_in_checkout_wrapper .left_imgs .resort_checkout_lightbox_photo {
-  display: inherit;
-}
-
-.resort_info_in_checkout_wrapper
-  .left_imgs
-  .resort_checkout_lightbox_photo
-  .transparent-box {
-  border-radius: var(--border-radius6px);
-}
-
-.resort_info_in_checkout_wrapper
-  .left_imgs
-  .resort_checkout_lightbox_photo
-  .transparent-box
-  .caption {
-  font-size: var(--font-size16);
-}
-
-.resort_info_in_checkout_wrapper
-  .left_imgs
-  .resort_checkout_lightbox_photo
-  .sub_img {
-  width: 100%;
-}
-
-.resort_info_in_checkout_wrapper
-  .left_imgs
-  .resort_checkout_lightbox_photo
-  .sub_img
-  .img-box {
-  height: auto;
-}
-
-.resort_info_in_checkout_wrapper
-  .left_imgs
-  .resort_checkout_lightbox_photo
-  .sub_img
-  .img-box
-  a
-  img {
-  width: 100%;
-  border-radius: var(--border-radius6px);
-  height: 160px;
-}
-
-.resort_info_in_checkout_wrapper .right_contents {
-  width: 75%;
-}
-
-.resort_info_in_checkout_wrapper .right_contents h1 {
-  font-size: var(--font-size18);
-  font-family: var(--h-font-600);
-}
-
-.resort_info_in_checkout_wrapper .right_contents span {
-  font-family: var(--h-font-400);
-}
-
-.room_f_list_checkout li {
-  margin: 0px 0 !important;
-  font-size: var(--font-size14);
-}
-
-.resort_info_in_checkout_wrapper
-  .right_contents
-  .right_content_inner_wrapper
-  .eco_cottage_img
-  img {
-  width: 40px;
-}
-
-.date_info_in_checkout_wrapper {
-  column-count: 4;
-  column-gap: 16px;
-}
-
-.date_info_in_checkout_wrapper .dates_card_item {
-  padding: 0.5rem 0.8rem;
-  background: #e3ecf7;
-  border-radius: var(--border-radius10px);
-}
-
-.date_info_in_checkout_wrapper .dates_card_item h6 {
-  margin-bottom: 0.2rem;
-  font-size: var(--font-size12);
-  letter-spacing: 1px;
-  color: #637498;
-}
-
-.date_info_in_checkout_wrapper .dates_card_item h1 {
-  margin-bottom: 0;
-  font-family: var(--h-font-600);
-  font-size: var(--font-size14);
-  color: var(--hover-color);
-}
-
-.room_info_in_checkout_wrapper {
-  margin-top: 1rem;
-  border: var(--borderLight);
-  border-radius: var(--border-radius6px);
-}
-
-.room_info_in_checkout_wrapper .room_title {
-  border-bottom: var(--borderLight);
-}
-
-.room_info_in_checkout_wrapper .room_title h4 {
-  padding: 1rem;
-  margin-bottom: 0;
-  font-size: var(--font-size20);
-}
-
-.room_info_in_checkout_wrapper .room_facility_wrapper {
-  padding: 1rem;
-}
-
-.label-before,
-.guest_info_form_field input:focus + label::before,
-.guest_info_form_field input:valid + label::before {
-  line-height: 20px;
-  font-size: var(--font-size16);
-  top: -10px;
-  background: #fff;
-  padding: 0 6px;
-  left: 10px;
-}
-
-.guest_info_form_field {
-  position: relative;
-}
-
-.verify_button {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.verify_button button {
-  padding: 16px 1rem;
-  display: inline-block;
-  background: var(--hover-color);
-  border: none;
-  color: #fff;
-  text-transform: uppercase;
-  font-family: var(--h-font-600);
-  font-size: var(--font-size12);
-  letter-spacing: 1px;
-  border-radius: 0 10px 10px 0;
-}
-
-.guest_info_form_field label::before {
-  font-weight: var(--h-font-400);
-  content: attr(title);
-  position: absolute;
-  top: 4px;
-  left: 15px;
-  line-height: 40px;
-  font-size: var(--font-size16);
-  color: #6e6e75;
-  transition: 0.4s ease-in-out;
-}
-
-.guest_info_form_field input {
-  width: 100%;
-  line-height: 40px;
-  padding: 4px 15px;
-  box-sizing: border-box;
-  font-size: var(--font-size16);
-  color: #222;
-  border: var(--borderGrafy);
-  border-radius: var(--border-radius10px);
-}
-
-.guest_info_form_field input:focus {
-  outline: 0;
-  border: var(--borderLight);
-}
-
-.guest_info_form_field input:valid + label::before {
-  content: attr(data-title);
-}
-
-.guest_info_form_field input:focus + label::before {
-  color: var(--main-color);
-}
-
-/* ------------ Guest Information Number Verify and Field ------------ */
-
-.guest_info_checkout_form_wrapper .form-group {
-  margin-bottom: 1.8rem;
-  position: relative;
-}
-
-.verifyNumber_heading {
-  margin-bottom: 1.5rem;
-  font-size: 20px;
-  font-family: var(--h-font-500);
-}
-
-.input-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.guest_info_checkout_form_wrapper .form-group .input-container input {
-  width: 100%;
-  padding: 12px;
-  box-sizing: border-box;
-  border: var(--borderLight);
-  border-radius: var(--border-radius10px);
-  font-size: 16px;
-  transition: 0.4s ease-in-out;
-  outline: none;
-  background: #fff !important;
-  position: relative;
-}
-
-.guest_info_checkout_form_wrapper
-  .form-group
-  .input-container
-  .inputPhoneVerify {
-  width: 65%;
-}
-
-.guest_info_checkout_form_wrapper .form-group .input-container .label {
-  font-family: var(--p-font-400);
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  font-size: 16px;
-  color: #828486;
-  pointer-events: none;
-  transition: all 0.2s;
-}
-
-.guest_info_checkout_form_wrapper
-  .form-group
-  .input-container
-  input:focus
-  + .label,
-.guest_info_checkout_form_wrapper
-  .form-group
-  .input-container
-  input:not(:placeholder-shown)
-  + .label {
-  top: -24px;
-  left: 0px;
-  font-size: 15px;
-  color: var(--hover-color);
-}
-
-#verify-button {
-  font-family: var(--h-font-500);
-  padding: 13px 60px;
-  background-color: var(--hover-color);
-  color: #fff;
-  border: 1px solid var(--hover-color);
-  border-radius: 0 10px 10px 0;
-  cursor: pointer;
-  font-size: 14px;
-  text-transform: uppercase;
-  transition: 0.4s ease;
-  letter-spacing: 1px;
-  position: absolute;
-  right: 35%;
-  top: 0;
-}
-
-#verify-button:hover {
-  background-color: var(--hover-color2);
-  border: 1px solid var(--hover-color2);
-}
-
-.error-message {
-  color: red;
-  font-size: 14px;
-  display: none;
-  margin-top: 5px;
-}
-
-.number_verify_popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-  animation: fadeIn 0.3s ease;
-  z-index: 9999999;
-  border-radius: var(--border-radius10px);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.verify_number_popup-content {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  width: 360px;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: slideIn 0.3s ease;
-}
-
-.verify_number_popup-content h3 {
-  font-size: var(--font-size18);
-}
-
-.verify_number_popup-content p {
-  font-size: var(--font-size14);
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateY(-20px);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-.info_field_hidden {
-  display: none;
-}
-
-.code-inputs {
-  display: flex;
-  justify-content: space-between;
-  margin: 1rem 0;
-}
-
-.code-input {
-  width: 45px;
-  padding: 10px;
-  text-align: center;
-  font-size: 18px;
-  border: var(--borderGrafy);
-  border-radius: 4px;
-  outline: none;
-}
-
-.code-input:focus {
-  border: var(--borderLight);
-}
-
-#submit-code,
-#resend-otp {
-  padding: 5px 0.8rem;
-  background: var(--hover-color);
-  outline: none;
-  border: none;
-  color: #fff;
-  border-radius: var(--border-radius6px);
-}
-
-/* ------------ Guest Information Number Verify and Field ------------ */
-
-.special_request_textarea {
-  padding: 1rem;
-  border: var(--borderLight);
-  border-radius: var(--border-radius6px);
-  transition: 0.4s ease-in-out;
-}
-
-.special_request_textarea:focus {
-  outline: none;
-  border: 1px solid var(--hover-color);
-  transition: 0.4s ease-in-out;
-}
-
-.checkout_price_summary_sticky_wrapper {
-  position: sticky;
-  top: 5rem;
-}
-
-.checkout_price_summary_wrapper {
-  margin-bottom: 1rem;
-  border-radius: var(--border-radius10px);
-  border: var(--borderGrafy);
-}
-
-.price_summary_title h4 {
-  padding: 1rem;
-  margin-bottom: 0;
-  font-family: var(--h-font-600);
-  font-size: var(--font-size18);
-  border-bottom: var(--borderGrafy);
-}
-
-.price_summary_items_wrapper {
-  padding: 1rem;
-}
-
-.price_summary_items_wrapper .price_summary_list_content {
-  font-family: var(--h-font-400);
-  font-size: var(--font-size16);
-}
-
-.price_summary_items_wrapper .price_summary_total {
-  font-family: var(--h-font-500);
-  font-size: var(--font-size18);
-}
-
-.total_price_wrapper {
-  padding: 1rem;
-  border-top: var(--borderGrafy);
-}
-
-.total_price_wrapper .total_price h4 {
-  margin-bottom: 0;
-  font-family: var(--h-font-600);
-  font-size: var(--font-size18);
-}
-
-.apply_coupon_btn {
-  margin: 1rem;
-  position: relative;
-}
-
-.apply_coupon_btn input {
-  width: 100%;
-  padding: 12px 1rem;
-  border: var(--borderLight);
-  border-radius: var(--border-radius6px);
-  outline: none;
-  transition: 0.4s ease-in-out;
-}
-
-.apply_coupon_btn input:focus {
-  border: 1px solid var(--hover-color);
-}
-
-.apply_coupon_btn .coupon_btn {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.apply_coupon_btn .coupon_btn button {
-  padding: 16px 1rem;
-  display: inline-block;
-  background: var(--hover-color);
-  border: none;
-  color: #fff;
-  text-transform: uppercase;
-  font-family: var(--h-font-600);
-  font-size: var(--font-size12);
-  letter-spacing: 1px;
-  border-radius: 0 6px 6px 0;
-}
-
-/* ============= Checkout Page's Style Css End ============== */
-
-/* =========== How to Make Payment Page Style Css Start ============= */
-
-.make_payment_wrapper {
-  margin-top: 3rem;
-  padding: 0 30px 30px 30px;
-  box-shadow: 0 0 50px 1px rgba(0, 0, 0, 0.1);
-  border-radius: var(--border-radius10px);
-}
-
-.success_message {
-  padding: 10px 1rem;
-  background: var(--hover-color);
-  color: #fff;
-  border-radius: var(--border-radius6px);
-  position: relative;
-  top: -35px;
-}
-
-.success_message .logo img {
-  margin-bottom: 1rem;
-  padding: 10px;
-  width: 180px;
-  background: #fff;
-  border-radius: var(--border-radius6px);
-}
-
-.make_payment_wrapper .success_message h1 {
-  font-size: var(--font-size24);
-}
-
-.make_payment_wrapper .success_message h2 {
-  font-size: var(--font-size16);
-}
-
-.make_payment_header {
-  margin-bottom: 1rem;
-  border: var(--borderGrafy);
-  padding: 1rem;
-  border-radius: var(--border-radius6px);
-  background: var(--hover-color2);
-}
-
-.make_payment_header .order_number h2 {
-  margin-bottom: 0;
-  font-size: var(--font-size18);
-  color: #fff;
-}
-
-.make_payment_header .order_number h2 span {
-  padding: 10px;
-  display: inline-block;
-  background: var(--hover-color);
-  border-radius: var(--border-radius10px);
-}
-
-.goBooking_details a {
-  font-family: var(--h-font-500);
-  color: #fff;
-}
-
-.make_payment_header h1 {
-  margin: 1rem 0;
-  font-size: var(--font-size20);
-}
-
-.payment_policy_content h1 {
-  text-align: center;
-  margin: 1rem 0;
-  font-size: var(--font-size24);
-  color: var(--hover-color);
-}
-
-.payment_policy_content h5 {
-  margin: 1rem 0;
-  font-size: 15px;
-  color: var(--hover-color);
-}
-
-.payment_policy_content p {
-  color: var(--main-color);
-  margin-bottom: 1.5rem;
-  font-size: var(--font-size14);
-}
-
-.payment_policy_content p span {
-  font-family: var(--h-font-500);
-  color: var(--hover-color2);
-}
-
-/* =========== How to Make Payment Page Style Css End ============= */
-
-/* ============== Tour Packages Page's Style Css Start =============== */
-.tour_package_section {
-  padding: 80px 0;
-}
-
-.tour_package_item {
-  margin-bottom: 1.5rem;
-  grid-gap: 1rem;
-  border: var(--borderGrafy);
-  border-radius: var(--border-radius10px);
-  background: #fff;
-  box-shadow: 0 0 6px 1px rgba(53, 52, 52, 0.1);
-  overflow: hidden;
-  transition: 0.4s ease-in-out;
-  min-height: 225px;
-}
-
-.tour_package_item:hover {
-  transform: translateY(-10px);
-}
-
-.package_img_left {
-  width: 30%;
-  position: relative;
-}
-
-.package_discount {
-  position: absolute;
-  top: 10px;
-  left: -30px;
-}
-
-.package_discount span {
-  width: 110px;
-  height: 20px;
-  display: inline-block;
-  background: var(--hover-color2);
-  font-family: var(--h-font-600);
-  color: #fff;
-  margin: auto;
-  text-align: center;
-  transform: rotate(-45deg);
-  font-size: 14px;
-}
-
-.package_img_left img {
-  width: 100%;
-  border-radius: 10px 0 0 10px;
-  height: 100%;
-}
-
-.package_content_middle {
-  padding: 16px 16px 16px 0px;
-  width: 56%;
-  border-right: var(--borderGrafy);
-}
-
-.package_content_middle h1 {
-  font-size: var(--font-size16);
-  font-weight: 600;
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  line-height: 30px;
-}
-
-.package_content_middle h4 {
-  font-size: var(--font-size14);
-}
-
-.package_content_middle p {
-  font-size: var(--font-size14);
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-}
-
-.package_facilities li {
-  padding: 0 10px;
-  margin: 4px -6px;
-  background: #ebebeb;
-  color: #425483;
-  border-radius: 30px;
-  font-size: var(--font-size14);
-}
-
-.package_facilities li:first-child {
-  margin-left: 0;
-}
-
-.package_facilities li:last-child {
-  margin-left: 0;
-}
-
-.package_facilities li:nth-child(even) {
-  background: #ebf4ff;
-  color: #425483;
-}
-
-.package_right_price {
-  padding: 16px 16px 16px 0px;
-  width: 14%;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: end;
-}
-
-.package_right_price .package_price {
-}
-
-.package_right_price .package_price h4 {
-  margin-bottom: 0;
-  font-family: var(--h-font-600);
-  font-size: var(--font-size20);
-  color: var(--hover-color);
-}
-
-.package_right_price .package_price h4 em {
-  font-family: var(--h-font-600);
-}
-
-.package_right_price .package_price span {
-  font-family: var(--h-font-400);
-  color: #637498;
-  font-size: var(--font-size14);
-}
-
-.package_right_price .package_view_details a {
-  padding: 4px 16px;
-  display: inline-block;
-  background: #f6f9ff;
-  color: var(--main-color);
-  font-family: var(--h-font-400);
-  letter-spacing: 1px;
-  border-radius: 30px;
-  border: var(--borderGrafy);
-}
-
-/* ============ Package Details Page Style Css Start ============= */
-.package_details_heading_wrapper .left_title_wrapper h1 {
-  font-size: 30px;
-  font-weight: 700;
-}
-
-.package_details_notice_image img {
-  margin-top: 1rem;
-  width: 100%;
-  border-radius: var(--border-radius10px);
-}
-
-.photos-grid-container .main-photo {
-  position: relative;
-}
-
-.package_type_rabon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  text-align: center;
-}
-
-.package_type_rabon span {
-  padding: 6px 1rem;
-  display: inline-block;
-  background: var(--hover-color2);
-  color: #fff;
-  border-radius: 10px 0 0 0;
-}
-
-.package_details_content_wrapper {
-  padding: 1.5rem 1rem;
-  border: var(--borderGrafy);
-  border-radius: var(--border-radius6px);
-}
-
-.package_details_heading {
-}
-
-.package_details_heading h2 {
-  padding-bottom: 1rem;
-  font-size: var(--font-size24);
-  font-family: var(--h-font-600);
-  border-bottom: var(--borderGrafy);
-}
-
-.package_details_des p {
-  margin: 1.6rem 0;
-  font-size: 15px;
-  color: var(--hover-color);
-  text-align: justify;
-}
-
-.package_booking_req_form_wrapper {
-  margin-top: 1rem;
-  padding: 1rem;
-  border-radius: var(--border-radius10px);
-  border: var(--borderGrafy);
-}
-
-.booking_req_heading h4 {
-}
-
-.package_price_label {
-  display: inline-block;
-  margin-top: 1rem;
-  font-family: var(--h-font-500);
-  color: var(--hover-color);
-}
-
-.packagePriceCheckLabel {
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: var(--main-color);
-  display: flex;
-  align-items: center;
-  font-family: var(--h-font-400);
-}
-
-.packagePricetoggleCheckbox {
-  margin-right: 10px;
-  transform: scale(1);
-  cursor: pointer;
-}
-
-.packagePricetextField {
-  width: 100%;
-  display: none;
-  margin-top: 10px;
-  padding: 12px 1rem;
-  border: var(--borderGrafy);
-  border-radius: var(--border-radius10px);
-  transition: all 0.5s ease;
-  opacity: 0;
-  transform: translateY(-20px);
-  outline: none;
-}
-
-.packagePricetextField:focus {
-  border: var(--borderLight);
-}
-
-.packagePricetextField.visible {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ============ Package Details Page Style Css Start ============= */
-
-/* ============== Tour Packages Page's Style Css End =============== */

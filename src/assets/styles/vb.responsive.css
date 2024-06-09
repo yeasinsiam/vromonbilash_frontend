@@ -10,6 +10,10 @@
     width: 160px;
   }
 
+  .mainheader.is-sticky .sticky_logo {
+    display: none;
+  }
+
   .mainheader.is-sticky .sticky_logo a img {
     width: 32px;
   }
@@ -319,8 +323,16 @@
     padding-bottom: 20px;
   }
 
+  .modal_body {
+    padding: 10px;
+  }
+
   .about_resort_details_wrapper {
-    padding: 1rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .package_details_content_wrapper {
+    margin-top: 170px;
   }
 
   .date_carousel.py-4 {
@@ -366,6 +378,7 @@
     max-width: 100%;
     padding: 6px;
   }
+
   .resort_details_page_room_item_wrapper .resort_list_top_image {
     width: 100%;
   }
@@ -392,6 +405,106 @@
   }
 
   /* =========== Resort Details Page Media Css End ============== */
+  /* ========= Checkout Page Media css Start =========== */
+  .checkout_section {
+    padding: 30px 0;
+  }
+
+  .breadcrumb_wrapper {
+    padding: 20px 1rem;
+  }
+
+  .cd-breadcrumb li a {
+    font-size: var(--font-size16);
+  }
+
+  .book_now_mobile_img img {
+    display: none;
+  }
+
+  .breadcrumb_wrapper h1 {
+    font-size: var(--font-size26);
+  }
+
+  .resort_title_for_checkout h1 {
+    font-size: 22px;
+  }
+
+  .date_info_in_checkout_wrapper {
+    column-count: 2;
+    column-gap: 6px;
+  }
+
+  .date_info_in_checkout_wrapper .dates_card_item {
+    margin-bottom: 0.5rem;
+  }
+
+  .resort_info_in_checkout_wrapper {
+    flex-direction: column;
+  }
+
+  .resort_info_in_checkout_wrapper .left_imgs {
+    width: 100%;
+  }
+
+  .resort_info_in_checkout_wrapper .right_contents {
+    width: 100%;
+  }
+
+  .booking_information_wrapper {
+    padding: 25px 5px;
+  }
+
+  .room_info_in_checkout_wrapper .room_title h4 {
+    font-size: var(--font-size18);
+  }
+
+  .verifyNumber_heading {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .guest_info_checkout_form_wrapper
+    .form-group
+    .input-container
+    .inputPhoneVerify {
+    width: 100%;
+  }
+
+  #verify-button {
+    padding: 13px 25px;
+    right: 0%;
+  }
+
+  .guest_info_checkout_form_wrapper .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .make_payment_wrapper {
+    padding: 0 20px 20px 20px;
+  }
+
+  .make_payment_wrapper .success_message h1 {
+    font-size: var(--font-size18);
+  }
+
+  .make_payment_wrapper .success_message h2 {
+    font-size: var(--font-size14);
+  }
+
+  .make_payment_header {
+    flex-direction: column;
+  }
+
+  .make_payment_header .order_number h2 span {
+    margin: 0.6rem 0;
+  }
+
+  /* ========= Checkout Page Media css End =========== */
+
+  .vb_footer {
+    padding-top: 40px;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -569,13 +682,21 @@
 @media (min-width: 992px) and (max-width: 1199.98px) {
   /* =============== Header Media Css Start ============== */
   .main-header_wrapper .nav-links .nav-link a {
-    margin: 0 1.5rem;
+    margin: 0 1rem;
     padding: 1rem 0.5rem;
     font-size: 15px;
   }
 
   #search-wrapper {
     max-width: 300px;
+  }
+
+  .breadcrumb_section1 {
+    margin-top: 64px;
+  }
+
+  .mainheader.is-sticky #search {
+    width: 165px;
   }
 
   /* =============== Header Media Css End ============== */
@@ -661,6 +782,24 @@
   }
 
   /* =========== Resort Details Page Media Css End ============== */
+
+  /* ============= Checkout Page Media Css Start ============ */
+  .date_info_in_checkout_wrapper {
+    column-gap: 6px;
+  }
+
+  .guest_info_checkout_form_wrapper
+    .form-group
+    .input-container
+    .inputPhoneVerify {
+    width: 100%;
+  }
+
+  #verify-button {
+    right: 0%;
+  }
+
+  /* ============= Checkout Page Media Css End  ============ */
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
