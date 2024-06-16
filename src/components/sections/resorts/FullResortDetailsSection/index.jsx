@@ -15,6 +15,7 @@ import RatingField from "@/components/theme/form-fields/RatingField";
 import Image from "next/image";
 import SelectRoomAndGuestModal from "./RoomList/RoomItem/SelectRoomAndGuestModal";
 import MoreDetailsModal from "./RoomList/RoomItem/MoreDetailsModal";
+import Link from "next/link";
 
 export default function FullResortDetailsSection() {
   const swiperElRef = useRef();
@@ -1173,12 +1174,9 @@ export default function FullResortDetailsSection() {
                           </li>
                         </ul>
                       </div>
-                      <a
-                        className="check_availability_btn"
-                        href="checkout.html"
-                      >
+                      <Link className="check_availability_btn" href="/checkout">
                         Process to checkout
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

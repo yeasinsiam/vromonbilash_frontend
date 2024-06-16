@@ -9,6 +9,7 @@ import {
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -18,9 +19,9 @@ export default function Footer() {
           <div className="row">
             <div className="col-12 col-md-3 col-lg-3">
               <div className="footer_logo">
-                <a href="index.html">
+                <Link href="/">
                   <Image src={fullLogoImage} alt="vromonbilash" />
-                </a>
+                </Link>
                 <p>
                   Travel is a transformative and enriching experience that
                   allows individuals to explore new destinations, cultures, and

@@ -121,6 +121,44 @@
   opacity: 1 !important;
 } */
 
+/* ============= Checkout Page's Style Css Start ============== */
+
+.resort_info_in_checkout_wrapper
+  .left_imgs
+  .resort_checkout_lightbox_photo
+  .sub_img
+  .img-box
+  a
+  .image-container {
+  width: 100%;
+  border-radius: var(--border-radius6px);
+  height: 160px;
+}
+
+.list-inline-item:not(:last-child) {
+  margin-right: 0.5rem !important;
+}
+
+/* ------------ Guest Information Number Verify and Field ------------ */
+.error-message {
+  display: block;
+}
+
+.number_verify_popup {
+  border-radius: 0;
+}
+
+/* ------------ Guest Information Number Verify and Field ------------ */
+.checkout_price_summary_sticky_wrapper {
+  top: 6rem;
+}
+
+/* ============== Tour Packages Page's Style Css Start =============== */
+
+.package_img_left .image-container {
+  height: 100%;
+}
+
 /* =================================================================== */
 /* =================================================================== */
 /* =================================================================== */

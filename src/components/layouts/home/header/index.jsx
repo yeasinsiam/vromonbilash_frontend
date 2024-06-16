@@ -201,6 +201,17 @@ export default function Header() {
                           Resorts
                         </Link>
                       </li>
+                      <li className="nav-link">
+                        <Link
+                          href="/packages"
+                          className={setConditionalClassName(
+                            isPagePathName("/packages"),
+                            "menu_active"
+                          )}
+                        >
+                          Packages
+                        </Link>
+                      </li>
                       {/* <DropdownMenu />
                       <li className="nav-link">
                         <a href="destination.html">Destination</a>
