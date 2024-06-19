@@ -8,7 +8,7 @@ import resort5jpg from "@/assets/static/media/resort_img/r5.jpg";
 import arrowRightPng from "@/assets/static/media/all_icon/arrow_right.png";
 import ecoPng from "@/assets/static/media/eco.png";
 
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ThemeImage from "@/components/theme/ThemeImage";
 import { setConditionalClassName } from "@/utils/helpers";
@@ -123,6 +123,12 @@ export default function ResortListItem({ view = "grid" }) {
             Courtyard by Marriott New York
           </Link>
         </h1>
+        <h6 className="resort_location">
+          <span>
+            <FontAwesomeIcon icon={faLocationDot} />
+          </span>{" "}
+          5855 W Century Blvd, Los Angeles - 90045
+        </h6>
         <ul className="resort_facelity_list ps-0">
           <li className="list-inline-item">Air Conditioning</li>
           <li className="list-inline-item">Wifi</li>
@@ -141,6 +147,15 @@ export default function ResortListItem({ view = "grid" }) {
             </h1>
           </div>
           <div className="resort_view_more_btn">
+            <div
+              class="stock_availibility"
+              style={{
+                color: "#425483",
+                backgroundColor: "rgb(196, 228, 255)",
+              }}
+            >
+              5 <span>Resort Available</span>
+            </div>
             <Link
               href={{
                 pathname: "/resorts/[slug]",

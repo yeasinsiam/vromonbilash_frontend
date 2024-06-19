@@ -1467,7 +1467,6 @@
   color: var(--hover-color);
 }
 
-/* need to work here */
 .book_now_mobile_img img {
   width: 250px;
 }
@@ -1572,7 +1571,7 @@
 }
 
 .resort_list_content {
-  padding: 20px 20px 10px 1rem;
+  padding: 10px 12px 10px 16px;
 }
 
 .resort_list_rating_wrapper .rl_rating span {
@@ -1598,7 +1597,21 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
 }
-
+.resort_list_item .resort_list_content h6.resort_location {
+  font-size: var(--font-size14);
+  color: var(--hover-color);
+}
+.resort_list_item .resort_list_content h6.resort_location span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 23px;
+  text-align: center;
+  background: var(--hover-color);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 10px;
+}
 .resort_list_item .resort_list_content h1.resort_title:hover {
   color: var(--hover-color);
 }
@@ -1623,7 +1636,7 @@
 }
 
 .resort_list_price_wrapper {
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   border-top: 1px solid #e9edf7;
 }
 
@@ -1648,7 +1661,16 @@
 .resort_list_price_wrapper .price_left_title h1 .reguler_price {
   font-family: var(--h-font-500);
   text-decoration: line-through;
-  text-decoration-color: var(--hover-color);
+  text-decoration-color: #637498;
+}
+
+.stock_availibility {
+  margin-bottom: 5px;
+  padding: 2px 10px;
+  font-size: var(--font-size12);
+  font-family: var(--h-font-400);
+  color: #425483;
+  border-radius: var(--border-radius6px);
 }
 
 .resort_view_more_btn a img {
@@ -2096,6 +2118,43 @@
   width: 36px;
 }
 
+.show_resort_list_availibility {
+}
+
+.show_resort_list_availibility > .alert_message {
+  padding: 6px 45px 6px 16px;
+  width: 100%;
+  position: relative;
+  border-radius: 5px;
+}
+
+.show_resort_list_availibility > .alert_message h3 {
+  margin-bottom: 0;
+  font-size: var(--font-size16);
+}
+
+.show_resort_list_availibility > .alert_message > .show_alert_close span {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  opacity: 0.5;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 50%;
+  right: 6px;
+  top: 6px;
+  text-align: center;
+  cursor: pointer;
+  color: #d6293e;
+  font-size: var(--font-size12);
+}
+
+.show_resort_list_availibility > .simple-alert {
+  background-color: #f3f3f3;
+  border-left: 5px solid var(--hover-color);
+}
+
 .tab-content > .tab-pane {
   visibility: hidden;
   opacity: 0;
@@ -2336,7 +2395,7 @@
 }
 
 .about_resort_details_wrapper {
-  padding: 2rem;
+  padding: 1.5rem 1rem 1.5rem 1rem;
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
@@ -2454,8 +2513,8 @@
 .resort_details_page_room_item_wrapper {
   margin: 1rem 0;
   padding: 10px;
-  background: #eaf4ff;
-  border: 1px solid #d8dbdf;
+  background: #f8fbff;
+  border: var(--borderGrafy);
   border-radius: 10px;
   box-shadow: 0 0 5px 1px rgba(255, 246, 246);
   grid-gap: 1rem;
@@ -2474,9 +2533,9 @@
 }
 
 .room_right_content_item .rl_rating span small {
-  margin-left: 0.6rem;
+  margin-left: 0.5rem;
   color: #fff;
-  font-size: 15px;
+  font-size: var(--font-size14);
 }
 
 .room_right_content_item .room_title {
@@ -2486,6 +2545,10 @@
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+}
+
+.room_facelity_list li {
+  font-size: 14px;
 }
 
 .room_facelity_list li::before {
@@ -2501,22 +2564,56 @@
 
 .room_right_content_item .view_more_room_details {
   display: inline-block;
-  padding-bottom: 1rem;
-  font-size: var(--font-size16);
+  padding-bottom: 0.6rem;
+  font-size: var(--font-size14);
   color: var(--hover-color);
   text-decoration: underline;
 }
 
+.room_size_type_capacity_main_wrapper_popup {
+  column-count: 2;
+}
+.room_size_type_capacity_main_wrapper_popup
+  > .room_type_size_etc_wrapper
+  ul
+  li {
+  font-size: var(--font-size16);
+}
+.room_size_type_capacity_main_wrapper_popup
+  > .room_type_size_etc_wrapper
+  ul
+  li
+  img {
+  width: 25px;
+  height: 25px;
+}
+
+.room_type_size_etc_wrapper ul li {
+  margin-bottom: 4px;
+  font-size: var(--font-size14);
+  color: #425483;
+}
+
+.room_type_size_etc_wrapper ul li img {
+  margin-right: 4px;
+  width: 16px;
+  height: 16px;
+}
+
+.room_type_size_etc_wrapper ul li span {
+  font-family: var(--h-font-500);
+}
+
 .resort_view_more_btn .select_room_btn {
-  font-weight: 600;
+  font-family: var(--h-font-400);
   display: inline-block;
-  padding: 5px 10px;
+  padding: 2px 10px;
   border: none;
   background: var(--hover-color);
   color: #fff;
   border-radius: var(--border-radius6px);
   animation: blueShodow 2s infinite;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 @keyframes blueShodow {
@@ -2640,17 +2737,25 @@ h1.room_select_popup_title {
   border-radius: 10px;
 }
 
-.customer_review_left_bar_wrapper
-  .cr_right_bar_percentage
-  .progress
-  .progress-bar {
-  justify-content: start;
+.customer_review_left_bar_wrapper .cr_right_bar_percentage ul li {
+  margin-bottom: 1rem;
 }
 
-.customer_review_left_bar_wrapper .cr_right_bar_percentage .progress {
-  margin-bottom: 0.6rem;
-  justify-content: start;
-  background: #fff;
+.customer_review_left_bar_wrapper .cr_right_bar_percentage ul li:last-child {
+  margin-bottom: 0;
+}
+
+.customer_review_left_bar_wrapper .cr_right_bar_percentage ul li h5 {
+  margin-bottom: 5px;
+  font-size: var(--font-size14);
+}
+
+.customer_review_left_bar_wrapper .cr_right_bar_percentage ul li h5 span {
+  padding: 1px 0.4rem;
+  background: #637498;
+  color: var(--hover-color2);
+  border-radius: var(--border-radius6px);
+  font-size: var(--font-size12);
 }
 
 .custumer_rating-num {
@@ -2875,7 +2980,7 @@ h1.room_select_popup_title {
 }
 
 .r_details_rating ul li {
-  margin-right: -10px;
+  margin-right: -2px !important;
   font-size: var(--font-size14);
   color: var(--hover-color2);
 }
@@ -2907,11 +3012,13 @@ h1.room_select_popup_title {
 }
 
 .carts-header .check-in {
+  font-family: var(--h-font-400);
   text-align: right;
   color: #425483;
 }
 
 .carts-header .check-out {
+  font-family: var(--h-font-400);
   color: #425483;
 }
 
@@ -2931,7 +3038,7 @@ h1.room_select_popup_title {
 }
 
 .carts-header strong {
-  font-weight: 500;
+  font-family: var(--h-font-400);
   font-size: 16px;
 }
 
@@ -3276,13 +3383,14 @@ h1.room_select_popup_title {
   color: #283035;
 }
 
-.comment-box .comment-head span {
-  font-weight: var(--h-font-500);
+.comment-box .comment-head h5 {
+  margin-bottom: 0;
+  font-weight: var(--h-font-400);
   float: left;
   color: var(--hover-color);
   font-size: var(--font-size12);
   position: relative;
-  top: 1px;
+  top: 6px;
 }
 
 .comment-box .comment-content {
@@ -3466,7 +3574,7 @@ td {
   }
 }
 
-#see-more-button {
+.see-more-button {
   padding: 2px 10px;
   background-color: var(--hover-color);
   color: #fff;
@@ -3478,11 +3586,11 @@ td {
   border-radius: 0 0 6px 6px;
 }
 
-#see-more-button:hover {
+.see-more-button:hover {
   background-color: var(--hover-color2);
 }
 
-#see-more-button.hidden_btn {
+.see-more-button.hidden_btn {
   display: none;
 }
 
@@ -4116,8 +4224,9 @@ td {
 }
 
 .package_content_middle h1 {
-  font-size: var(--font-size16);
-  font-weight: 600;
+  margin-bottom: 0;
+  font-size: var(--font-size20);
+  font-family: var(--bangla-400);
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
@@ -4126,10 +4235,12 @@ td {
 }
 
 .package_content_middle h4 {
-  font-size: var(--font-size14);
+  font-family: var(--bangla-400);
+  font-size: var(--font-size16);
 }
 
 .package_content_middle p {
+  font-family: var(--bangla-400);
   font-size: var(--font-size14);
   margin-top: 10px;
   margin-bottom: 10px;
@@ -4172,6 +4283,15 @@ td {
 .package_right_price .package_price {
 }
 
+.package_right_price .package_price h5 {
+  margin-bottom: 0;
+  font-family: var(--h-font-400);
+  font-size: var(--font-size14);
+  color: #637498;
+  text-decoration: line-through;
+  text-decoration-color: #637498;
+}
+
 .package_right_price .package_price h4 {
   margin-bottom: 0;
   font-family: var(--h-font-600);
@@ -4202,8 +4322,8 @@ td {
 
 /* ============ Package Details Page Style Css Start ============= */
 .package_details_heading_wrapper .left_title_wrapper h1 {
-  font-size: 30px;
-  font-weight: 700;
+  font-size: 36px;
+  font-family: var(--bangla-400);
 }
 
 .package_details_notice_image img {
@@ -4248,8 +4368,9 @@ td {
 }
 
 .package_details_des p {
+  font-family: var(--bangla-400);
   margin: 1.6rem 0;
-  font-size: 15px;
+  font-size: var(--font-size16);
   color: var(--hover-color);
   text-align: justify;
 }
@@ -4310,5 +4431,22 @@ td {
 }
 
 /* ============ Package Details Page Style Css Start ============= */
+
+/* ========== Package Checkout Page Style Css Start ========= */
+.resort_title_for_checkout h1 {
+  line-height: 36px;
+  font-family: var(--bangla-400);
+}
+
+.resort_title_for_checkout h1 span {
+  font-family: var(--bangla-400);
+}
+
+.package_checkout_right_content_title h1 {
+  font-family: var(--bangla-400) !important;
+  font-size: var(--font-size16) !important;
+}
+
+/* ========== Package Checkout Page Style Css End ========= */
 
 /* ============== Tour Packages Page's Style Css End =============== */

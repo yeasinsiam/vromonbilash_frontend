@@ -31,6 +31,10 @@ const montserratRegularFont = localFont({
   src: "../assets/fonts/Montserrat/Montserrat-Regular.ttf",
 });
 
+const fmMahfujRumaysaFont = localFont({
+  src: "../assets/fonts/vb_bangla/FN-Mahfuj-Rumaysa.ttf",
+});
+
 //=======================>> styles <<===========================\\
 // React Date Range
 import "react-date-range/dist/styles.css";
@@ -75,6 +79,7 @@ export default function App({ Component, pageProps }) {
           --h-font-600: ${rubikSemiBoldFont.style.fontFamily};
           --h-font-700: ${rubikBoldFont.style.fontFamily};
           --p-font-400: ${montserratRegularFont.style.fontFamily};
+          --bangla-400: ${fmMahfujRumaysaFont.style.fontFamily};
         }
       `}</style>
       <NextNProgress

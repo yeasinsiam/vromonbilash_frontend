@@ -659,6 +659,10 @@
     width: 275px;
   }
 
+  .resort_details_page_room_item_wrapper .resort_list_top_image {
+    width: 240px;
+  }
+
   .cart-item h5 {
     font-size: 13px;
   }
@@ -755,6 +759,14 @@
   /* ============= Resort Page Media Css End ============ */
 
   /* =========== Resort Details Page Media Css Tart ============== */
+  .resort_details_page_room_item_wrapper {
+    flex-direction: column;
+  }
+
+  .resort_details_page_room_item_wrapper .resort_list_top_image {
+    width: 100%;
+  }
+
   .resort_view_more_btn .select_room_btn {
     padding: 5px 6px;
     font-size: 14px;
@@ -814,6 +826,21 @@
   }
 
   /* ================= Header Media Css End ================= */
+
+  /* ========== Resort Details Page Media Css Start ======== */
+  .resort_details_page_room_item_wrapper .resort_list_top_image {
+    width: 280px;
+  }
+
+  .carts-header {
+    column-gap: 5px;
+  }
+
+  .carts-header strong {
+    font-size: 15px;
+  }
+
+  /* ========== Resort Details Page Media Css End ======== */
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
