@@ -1,6 +1,8 @@
 import Head from "next/head";
 import localFont from "next/font/local";
 import NextNProgress from "nextjs-progressbar";
+import { SWRConfig } from "swr";
+import axios from "@/utils/axios";
 
 // Fonts
 const pacificoRegularFont = localFont({
@@ -87,7 +89,16 @@ export default function App({ Component, pageProps }) {
         height={4}
         options={{ showSpinner: false }}
       />
-      <Component {...pageProps} />
+      <SWRConfig
+        value={{
+          fetcher: (url) => axios.get(url).then((res) => res.data),
+          keepPreviousData: true,
+          // fallback: pageProps.fallback,
+          revalidateOnFocus: false,
+        }}
+      >
+        <Component {...pageProps} />
+      </SWRConfig>
     </>
   );
 }
