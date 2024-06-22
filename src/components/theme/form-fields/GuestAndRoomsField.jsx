@@ -6,12 +6,14 @@ import { motion } from "framer-motion";
 export default function GuestAndRoomsField({
   dropdownZIndex = 10,
   zIndex = 10,
+  adultsCount = 1,
+  setAdultsCount,
+  childrenCount = 0,
+  setChildrenCount,
 }) {
   const dropdownRef = useRef(null);
   const buttonRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
-  const [adultsCount, setAdultsCount] = useState(1);
-  const [childrenCount, setChildrenCount] = useState(0);
 
   useEffect(() => {
     if (buttonRef.current) {
