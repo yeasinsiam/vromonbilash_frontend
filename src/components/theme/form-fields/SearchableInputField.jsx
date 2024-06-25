@@ -14,6 +14,7 @@ const SearchableInputField = ({
 }) => {
   const dropdownRef = useRef(null);
   const searchBoxRef = useRef(null);
+  const [isInputFocused, setIsInputFocused] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchInputValue, setSearchInputValue] = useState(value);
 
@@ -23,12 +24,32 @@ const SearchableInputField = ({
 
   // show dropdown if options available
   useEffect(() => {
-    if (options.length && !isOptionsLoading) {
+    if (isInputFocused && options.length && !isOptionsLoading) {
       setShowDropdown(true);
     } else {
       setShowDropdown(false);
     }
-  }, [options, isOptionsLoading]);
+  }, [isInputFocused, options, isOptionsLoading]);
+
+  // when click outside of dropdown > hide dropdown
+  // useEffect(() => {
+  //   if (dropdownRef.current && showDropdown) {
+  //     const handleClickOutside = (event) => {
+  //       if (
+  //         dropdownRef.current &&
+  //         !dropdownRef.current.contains(event.target)
+  //       ) {
+  //         setShowDropdown(false);
+  //       }
+  //     };
+
+  //     document.addEventListener("click", handleClickOutside);
+
+  //     return () => {
+  //       document.removeEventListener("click", handleClickOutside);
+  //     };
+  //   }
+  // }, [dropdownRef, showDropdown]);
 
   const handleSelect = (value) => {
     setSearchInputValue(value);
@@ -48,6 +69,9 @@ const SearchableInputField = ({
         position: "relative",
         zIndex,
       }}
+      onFocus={() => setIsInputFocused(true)}
+      onBlur={() => setIsInputFocused(false)}
+      tabIndex="-1"
     >
       <label htmlFor="">{label}</label>
       <div ref={dropdownRef} className="select_and_search_form">
@@ -92,10 +116,11 @@ const SearchableInputField = ({
                     {options.map((option) => (
                       <div
                         key={option.value}
-                        className={`dropdown-menu-item ${setConditionalClassName(
-                          option.value == value,
-                          "is-select"
-                        )} d-block`}
+                        className={`dropdown-menu-item  d-block`}
+                        // className={`dropdown-menu-item ${setConditionalClassName(
+                        //   option.value == value,
+                        //   "is-select"
+                        // )} d-block`}
                         onClick={() => handleSelect(option.value)}
                       >
                         {option.title}

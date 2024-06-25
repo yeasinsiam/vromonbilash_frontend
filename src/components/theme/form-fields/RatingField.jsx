@@ -3,7 +3,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 
-export default function RatingField({ activeRatings, setActiveRatings }) {
+export default function RatingField({ activeRatings = [], setActiveRatings }) {
   // const [activeRatings, setActiveRatings] = useState([]);
 
   const setActiveRating = (value) => {

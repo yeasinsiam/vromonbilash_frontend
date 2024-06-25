@@ -1,10 +1,13 @@
-import { makeId } from "@/utils/helpers";
+// import { makeId } from "@/utils/helpers";
 import React from "react";
 
 export default function CheckboxFields({
-  id = makeId(5),
+  // id = makeId(5),
   view = "grid",
+
   items = [],
+  checked = [],
+  onChecked = () => {},
 }) {
   return (
     <div className="filter_checkbox">
@@ -15,15 +18,14 @@ export default function CheckboxFields({
             className={`${view == "grid" ? "list-inline-item" : ""}`}
           >
             <input
-              id={`checkbox-field-${id}-${item.value}`}
+              id={`checkbox-field-${item.value}`}
               type="checkbox"
+              checked={checked.includes(item.value)}
               //   defaultValue="checkbox"
               className="checkbox_animation"
-              name="checkbox"
+              onChange={() => onChecked(item.value)}
             />
-            <label htmlFor={`checkbox-field-${id}-${item.value}`}>
-              {item.label}
-            </label>
+            <label htmlFor={`checkbox-field-${item.value}`}>{item.label}</label>
           </li>
         ))}
       </ul>

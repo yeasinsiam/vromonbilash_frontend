@@ -1,24 +1,26 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function RangeSliderField({
-  startRange,
-  endRange,
-  minRange,
-  maxRange,
-  onChange,
+  startRange = 1000,
+  endRange = 5000,
+  minRange = 1000,
+  maxRange = 5000,
+  onChange = () => {},
 }) {
   const sliderRef = useRef(null);
+  const [min, setMin] = useState(startRange);
+  const [max, setMax] = useState(endRange);
 
   useEffect(() => {
     const sliderEl = sliderRef.current;
 
     const moneyFormat = wNumb({
       decimals: 0,
-      thousand: ",",
-      prefix: "৳",
+      // thousand: ",",
+      // prefix: "৳",
     });
     noUiSlider.create(sliderEl, {
-      start: [startRange, endRange],
+      start: [min, max],
       step: 1,
       range: {
         min: [minRange],
@@ -30,15 +32,26 @@ export default function RangeSliderField({
 
     // Set visual min and max values and also update value hidden form inputs
     const slideOnUpdateHandler = (values, handle) => {
-      onChange(values[0], values[1]);
+      setMin(values[0]);
+      setMax(values[1]);
     };
+
+    const slideOnChangeHandler = ([min, max]) => {
+      onChange(min, max);
+    };
+
     sliderEl.noUiSlider.on("update", slideOnUpdateHandler);
+    sliderEl.noUiSlider.on("change", slideOnChangeHandler);
 
     return () => {
       sliderEl.noUiSlider.off("update");
+      sliderEl.noUiSlider.off("change");
       sliderEl.noUiSlider.destroy();
     };
   }, []);
+
+  const numberFormat = (number) =>
+    number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
   return (
     <>
@@ -47,11 +60,11 @@ export default function RangeSliderField({
         <div className="price_range_count d-flex">
           <span>Price: </span>
           <div className="caption">
-            <span className="slider-range-value1">{startRange}</span>
+            <span className="slider-range-value1">৳{numberFormat(min)}</span>
           </div>
           <span>to</span>
           <div className="text-right caption">
-            <span className="slider-range-value2">{endRange}</span>
+            <span className="slider-range-value2">৳{numberFormat(max)}</span>
           </div>
         </div>
         {/* <div className="price_apply_btn">
