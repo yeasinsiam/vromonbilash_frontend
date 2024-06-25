@@ -1,6 +1,7 @@
 import HomeLayout from "@/components/layouts/home";
 import ResortListSection from "@/components/sections/resorts/ResortListSection";
 import { ResortsSearchSectionLoading } from "@/components/sections/resorts/ResortsSearchSection";
+import ResortListFiltersContextProvider from "@/contexts/sections/resorts/ResortListFiltersContext";
 import dynamic from "next/dynamic";
 
 const ResortsSearchSection = dynamic(
@@ -14,8 +15,10 @@ const ResortsSearchSection = dynamic(
 export default function ResortsPage() {
   return (
     <HomeLayout>
-      <ResortsSearchSection />
-      <ResortListSection />
+      <ResortListFiltersContextProvider>
+        <ResortsSearchSection />
+        <ResortListSection />
+      </ResortListFiltersContextProvider>
     </HomeLayout>
   );
 }

@@ -5,8 +5,53 @@ import backgroundPng from "@/assets/static/media/d_bg.png";
 
 import searchGif from "@/assets/static/media/search.gif";
 import Image from "next/image";
+import { useRef, useState } from "react";
+import useSWR from "swr";
+import SearchableInputField from "@/components/theme/form-fields/SearchableInputField";
+import moment from "moment";
+import { useResortListFiltersContext } from "@/contexts/sections/resorts/ResortListFiltersContext";
+
+function useWhereToResortValue() {
+  const isInitialInputChanged = useRef(false);
+  const [value, setValue] = useState("");
+
+  const { data: optionsData, isLoading: isOptionsLoading } = useSWR(
+    value != null && isInitialInputChanged.current
+      ? `/resorts/suggestions/?search=${value}`
+      : null,
+    {
+      fallbackData: [],
+    }
+  );
+
+  return {
+    isInitialInputChanged,
+    value,
+    setValue,
+    optionsData,
+    isOptionsLoading,
+  };
+}
 
 export default function ResortsSearchSection() {
+  const resortListingFiltersContext = useResortListFiltersContext();
+
+  const whereToResortValue = useWhereToResortValue();
+  const [checkInCheckOut, setCheckInCheckOut] = useState({
+    checkIn: moment(),
+    checkOut: moment().add(1, "day"),
+  });
+  const [adultAndChildCount, setAdultAndChildCount] = useState({
+    adult: 1,
+    child: 0,
+  });
+
+  const handleSearch = () => {
+    resortListingFiltersContext.setSearch(whereToResortValue.value);
+    resortListingFiltersContext.setCheckInCheckOut(checkInCheckOut);
+    resortListingFiltersContext.setAdultAndChildCount(adultAndChildCount);
+  };
+
   return (
     <>
       <section className="breadcrumb_section2">
@@ -35,27 +80,67 @@ export default function ResortsSearchSection() {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-12 col-xl-11 col-xxl-11">
-              <form action="">
+              <div>
                 <div className="search_form_wrapper">
                   <div className="resort_package_search_form">
                     <div className="row">
                       <div className="col-md-12 col-lg-4">
-                        <SingleSelectField
-                          label="Location"
-                          selectText=" Select your country"
+                        <SearchableInputField
+                          label="Where to go?"
                           zIndex={30}
+                          options={whereToResortValue.optionsData.map(
+                            (option) => ({
+                              title: option.title,
+                              value: option.title,
+                            }),
+                            []
+                          )}
+                          value={whereToResortValue.value}
+                          onChange={(value) => {
+                            whereToResortValue.setValue(value);
+                            whereToResortValue.isInitialInputChanged.current = true;
+                          }}
+                          isOptionsLoading={whereToResortValue.isOptionsLoading}
                         />
                       </div>
                       <div className="col-md-5 col-lg-3">
-                        <DateRangeField label="Check in - Out" zIndex={20} />
+                        <DateRangeField
+                          label="Check in - Out"
+                          minDate={moment()._d}
+                          startDate={checkInCheckOut.checkIn}
+                          endDate={checkInCheckOut.checkOut}
+                          onChange={(startDate, endDate) =>
+                            setCheckInCheckOut({
+                              checkIn: startDate,
+                              checkOut: endDate,
+                            })
+                          }
+                          zIndex={20}
+                        />
                       </div>
                       <div className="col-md-5 col-lg-3">
-                        <GuestAndRoomsField />
+                        <GuestAndRoomsField
+                          adultsCount={adultAndChildCount.adult}
+                          childrenCount={adultAndChildCount.child}
+                          setAdultsCount={(count) =>
+                            setAdultAndChildCount({
+                              ...adultAndChildCount,
+                              adult: count,
+                            })
+                          }
+                          setChildrenCount={(count) =>
+                            setAdultAndChildCount({
+                              ...adultAndChildCount,
+                              child: count,
+                            })
+                          }
+                        />
                       </div>
                       <div className="col-md-2 col-lg-2">
                         <button
                           className="form_submit_search_btn"
-                          type="submit"
+                          type="button"
+                          onClick={handleSearch}
                         >
                           <div className="circle-wrapper text-center text-md-end">
                             <div className="warning circle" />
@@ -72,7 +157,7 @@ export default function ResortsSearchSection() {
                     </div>
                   </div>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
@@ -122,7 +207,7 @@ export function ResortsSearchSectionLoading() {
             <div className="col-lg-12 col-xl-11 col-xxl-11">
               <form action="">
                 <div className="search_form_wrapper ">
-                  <nav>
+                  {/* <nav>
                     <div className=" d-flex" id="nav-tab" role="tablist">
                       <div
                         className="c-skeleton-square me-3"
@@ -141,7 +226,7 @@ export function ResortsSearchSectionLoading() {
                         }}
                       />
                     </div>
-                  </nav>
+                  </nav> */}
                   <div className="tab-content">
                     <div className={`tab-pane active`} role="tabpanel">
                       <div className="resort_package_search_form">
@@ -199,3 +284,24 @@ export function ResortsSearchSectionLoading() {
     </>
   );
 }
+
+// function useWhereToResortValue() {
+//   const [value, setValue] = useState("");
+//   const [searchValue, setSearchValue] = useState(null);
+
+//   const { data: optionsData, isLoading: isOptionsLoading } = useSWR(
+//     searchValue != null ? `/resorts/suggestions/?search=${searchValue}` : null,
+//     {
+//       fallbackData: [],
+//     }
+//   );
+
+//   return {
+//     value,
+//     searchValue,
+//     setValue,
+//     setSearchValue,
+//     optionsData,
+//     isOptionsLoading,
+//   };
+// }

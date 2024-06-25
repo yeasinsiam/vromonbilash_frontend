@@ -14,7 +14,7 @@ import ThemeImage from "@/components/theme/ThemeImage";
 import { setConditionalClassName } from "@/utils/helpers";
 import Link from "next/link";
 
-export default function ResortListItem({ view = "grid" }) {
+export default function ResortListItem({ resort, view = "grid" }) {
   const swiperElRef = useRef();
 
   //   Init Swiper
@@ -54,6 +54,11 @@ export default function ResortListItem({ view = "grid" }) {
     }
   }, [swiperElRef]);
 
+  const averageRating =
+    resort.vromonbilash_rating && resort.resort_rating
+      ? (resort.vromonbilash_rating + resort.resort_rating) / 2
+      : 0;
+
   return (
     <div
       className={`resort_list_item ${setConditionalClassName(
@@ -64,12 +69,18 @@ export default function ResortListItem({ view = "grid" }) {
       <div className="resort_list_top_image">
         <a>
           <swiper-container ref={swiperElRef} init="false">
-            <swiper-slide className="swiper-slide">
-              <div className="card-image">
-                <ThemeImage src={resort1jpg} alt="Resort " />
-              </div>
-            </swiper-slide>
-            <swiper-slide className="swiper-slide">
+            {resort.thumbnails.map((thumbnail) => (
+              <swiper-slide className="swiper-slide" key={thumbnail.image}>
+                <div className="card-image">
+                  <ThemeImage
+                    src={process.env.NEXT_PUBLIC_BACKEND_URL + thumbnail.image}
+                    alt="Resort "
+                  />
+                </div>
+              </swiper-slide>
+            ))}
+
+            {/* <swiper-slide className="swiper-slide">
               <div className="card-image">
                 <ThemeImage src={resort2jpg} alt="Resort " />
               </div>
@@ -88,26 +99,28 @@ export default function ResortListItem({ view = "grid" }) {
               <div className="card-image">
                 <ThemeImage src={resort5jpg} alt="Resort " />
               </div>
-            </swiper-slide>
+            </swiper-slide> */}
           </swiper-container>
         </a>
-        <div className="discount_price_wrapper">
-          <h1>
-            <span>15%</span> Off
-          </h1>
-        </div>
+        {Boolean(resort.discount_percentage) && (
+          <div className="discount_price_wrapper">
+            <h1>
+              <span>{resort.discount_percentage}%</span> Off
+            </h1>
+          </div>
+        )}
       </div>
       <div className="resort_list_content">
         <div className="resort_list_rating_wrapper d-flex justify-content-between align-items-center">
           <div className="rl_rating">
-            <a href="#">
+            {Boolean(averageRating) && (
               <span>
                 <i className="fa-solid fa-star" />
                 <FontAwesomeIcon icon={faStar} />
 
-                <small>4.5</small>
+                <small>{averageRating}</small>
               </span>
-            </a>
+            )}
           </div>
           <div className="eco_cottage_wrapper">
             <Image src={ecoPng} alt="Eco Image" style={{ height: "auto" }} />
@@ -117,49 +130,55 @@ export default function ResortListItem({ view = "grid" }) {
           <Link
             href={{
               pathname: "/resorts/[slug]",
-              query: { slug: "my-resort" },
+              query: { slug: resort.slug },
             }}
           >
-            Courtyard by Marriott New York
+            {resort.title}
           </Link>
         </h1>
         <h6 className="resort_location">
           <span>
             <FontAwesomeIcon icon={faLocationDot} />
           </span>{" "}
-          5855 W Century Blvd, Los Angeles - 90045
+          {resort.address}
         </h6>
         <ul className="resort_facelity_list ps-0">
-          <li className="list-inline-item">Air Conditioning</li>
-          <li className="list-inline-item">Wifi</li>
-          <li className="list-inline-item">Kitchen</li>
-          <li className="list-inline-item">Pool</li>
+          {resort.facilities.map((facility) => (
+            <li className="list-inline-item" key={facility.name}>
+              {facility.name}
+            </li>
+          ))}
         </ul>
         <div className="resort_list_price_wrapper d-flex justify-content-between align-items-end">
           <div className="price_left_title">
             <span className="start_form">Start form</span>
             <h1>
               <span className="reguler_price">
-                <b>৳ </b>1500
+                <b>৳ </b>
+                {resort.regular_price}
               </span>{" "}
               <b>৳ </b>
-              1400 <span>/Night</span>
+              {resort.sale_price} <span>/Night</span>
             </h1>
           </div>
           <div className="resort_view_more_btn">
             <div
-              class="stock_availibility"
+              className="stock_availibility"
               style={{
-                color: "#425483",
-                backgroundColor: "rgb(196, 228, 255)",
+                ...(parseInt(resort.available_room)
+                  ? { color: "#425483", backgroundColor: "rgb(196, 228, 255)" }
+                  : {
+                      color: "red",
+                      backgroundColor: "rgb(240, 243, 255)",
+                    }),
               }}
             >
-              5 <span>Resort Available</span>
+              {resort.available_room} <span>Resort Available</span>
             </div>
             <Link
               href={{
                 pathname: "/resorts/[slug]",
-                query: { slug: "my-resort" },
+                query: { slug: resort.slug },
               }}
             >
               View Details{" "}
@@ -171,6 +190,127 @@ export default function ResortListItem({ view = "grid" }) {
                 />
               </span>
             </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function ResortListItemLoading({ view = "grid" }) {
+  return (
+    <div
+      className={`resort_list_item ${setConditionalClassName(
+        view == "list",
+        "resort_horizontal_card_list d-flex"
+      )}`}
+    >
+      <div className="resort_list_top_image">
+        <div
+          className="c-skeleton-square "
+          style={{
+            maxWidth: "100%",
+            height: `270px`,
+            borderRadius: "5px",
+          }}
+        />
+        {/* <div className="discount_price_wrapper"></div> */}
+      </div>
+      <div className="resort_list_content">
+        <div className="resort_list_rating_wrapper d-flex justify-content-between align-items-center">
+          <div className="rl_rating">
+            <div
+              className="c-skeleton-square "
+              style={{
+                width: "60px",
+                height: `25px`,
+                borderRadius: "5px",
+              }}
+            />
+          </div>
+          <div className="eco_cottage_wrapper">
+            <div
+              className="c-skeleton-square "
+              style={{
+                width: "45px",
+                height: `45px`,
+                borderRadius: "5px",
+              }}
+            />
+          </div>
+        </div>
+        <h1 className="resort_title">
+          <div
+            className="c-skeleton-square "
+            style={{
+              maxWidth: "500px",
+              height: `25px`,
+              borderRadius: "5px",
+            }}
+          />
+        </h1>
+        <h6 className="resort_location">
+          <div
+            className="c-skeleton-square "
+            style={{
+              maxWidth: "350px",
+              height: `20px`,
+              borderRadius: "5px",
+            }}
+          />
+        </h6>
+        <div
+          className="c-skeleton-square mt-1 mb-1"
+          style={{
+            maxWidth: "200px",
+            height: `20px`,
+            borderRadius: "5px",
+          }}
+        />
+
+        <div
+          className="resort_list_price_wrapper d-flex justify-content-between align-items-end gap-3"
+          style={{ border: "none" }}
+        >
+          <div className="price_left_title w-50">
+            <span className="start_form">
+              <div
+                className="c-skeleton-square "
+                style={{
+                  maxWidth: "100px",
+                  height: `20px`,
+                  borderRadius: "5px",
+                }}
+              />
+            </span>
+            <h1>
+              <div
+                className="c-skeleton-square mt-1"
+                style={{
+                  maxWidth: "200px",
+                  height: `30px`,
+                  borderRadius: "5px",
+                }}
+              />
+            </h1>
+          </div>
+          <div className="resort_view_more_btn w-50 d-flex justify-content-end">
+            <div style={{ width: "150px" }}>
+              <div
+                className="c-skeleton-square "
+                style={{
+                  height: `20px`,
+                  borderRadius: "5px",
+                }}
+              />
+              <div
+                className="c-skeleton-square mt-1"
+                style={{
+                  height: `20px`,
+                  borderRadius: "5px",
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>

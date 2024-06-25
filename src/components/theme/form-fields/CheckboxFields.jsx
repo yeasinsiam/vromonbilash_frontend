@@ -21,7 +21,6 @@ export default function CheckboxFields({
               id={`checkbox-field-${item.value}`}
               type="checkbox"
               checked={checked.includes(item.value)}
-              //   defaultValue="checkbox"
               className="checkbox_animation"
               onChange={() => onChecked(item.value)}
             />

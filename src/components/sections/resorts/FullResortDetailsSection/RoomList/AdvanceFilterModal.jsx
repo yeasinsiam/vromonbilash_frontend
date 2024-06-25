@@ -160,7 +160,7 @@ export default function AdvanceRoomListFilterModal({
                 <div className=" col-lg-12 d-flex align-items-center mt-2">
                   <button
                     type="button"
-                    class="check_availability_btn "
+                    className="check_availability_btn "
                     onClick={() => setShowRoomListAdvanceFilterModal(false)}
                     style={{ marginTop: "0" }}
                   >

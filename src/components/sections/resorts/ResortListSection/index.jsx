@@ -4,11 +4,19 @@ import icon8List50Png from "@/assets/static/media/all_icon/icons8-list-50.png";
 import icon8FilterGif from "@/assets/static/media/all_icon/icons8-filter.gif";
 import ResortListItem from "./ResortListItem";
 import AdvanceFiltersModal from "./AdvanceFiltersModal";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { setConditionalClassName } from "@/utils/helpers";
 import SidebarFilters from "./SidebarFilters";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import dynamic from "next/dynamic";
+import ResortListing, { ResortListingLoading } from "./ResortListing";
+
+// const ResortListing = dynamic(() => import("./ResortListing"), {
+//   loading: () => <ResortListingLoading />,
+//   ssr: false,
+//   suspense: true,
+// });
 
 export default function ResortListSection() {
   const [currentTab, setCurrentTab] = useState("list"); // 'grid | list'
@@ -21,7 +29,7 @@ export default function ResortListSection() {
             <div className="col-lg">
               <div className="list_grid_view_wrapper">
                 {/* ---------- Resort Grid View & List View Tab --------- */}
-                <nav>
+                {/* <nav>
                   <div className="nav my_nav_tab nav-tabs mb-3 justify-content-end">
                     <button
                       className={`nav-link ${setConditionalClassName(
@@ -58,7 +66,7 @@ export default function ResortListSection() {
                       List View
                     </button>
                   </div>
-                </nav>
+                </nav> */}
                 {/* ---------- Resort Grid View & List View Tab --------- */}
                 {/* ======== Grid View Tab Content */}
                 <div className="tab-content grid_view_collpse">
@@ -144,14 +152,11 @@ export default function ResortListSection() {
                             </button>
                             {/* -----------Resort Advance Search Filter Button ---------- */}
                           </div>
-                          <div className="col-lg-8 col-xl-9">
-                            <ResortListItem view="list" />
-                            <ResortListItem view="list" />
-                            <ResortListItem view="list" />
-                            <ResortListItem view="list" />
-                            <ResortListItem view="list" />
-                            <ResortListItem view="list" />
-                          </div>
+                          {/* <Suspense
+                            fallback={<ResortListingLoading type="list" />}
+                          > */}
+                          <ResortListing type="list" />
+                          {/* </Suspense> */}
                         </div>
                         {/* End Row List View*/}
                       </div>

@@ -3,6 +3,7 @@ import GuestAndRoomsField from "@/components/theme/form-fields/GuestAndRoomsFiel
 import RangeSliderField from "@/components/theme/form-fields/RangeSliderField";
 import RatingField from "@/components/theme/form-fields/RatingField";
 import SingleSelectField from "@/components/theme/form-fields/SingleSelectField";
+import { useResortListFiltersContext } from "@/contexts/sections/resorts/ResortListFiltersContext";
 import { setConditionalClassName } from "@/utils/helpers";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -34,6 +35,24 @@ export default function AdvanceFiltersModal({
     return () => clearTimeout(timeoutId);
   }, [showAdvanceFilterModal]);
 
+  const [vromonbilashRatings, setVromonbilashRatings] = useState([]);
+  const [resortRatings, setResortRatings] = useState([]);
+  const [priceRange, setPriceRange] = useState({
+    min: 500,
+    max: 5000,
+  });
+  const [roomType, setRoomType] = useState("");
+
+  const resortListFiltersContext = useResortListFiltersContext();
+
+  const applyFilters = () => {
+    resortListFiltersContext.setVromonbilashRatings(vromonbilashRatings);
+    resortListFiltersContext.setResortRatings(resortRatings);
+    resortListFiltersContext.setPriceRange(priceRange);
+    resortListFiltersContext.setRoomType(roomType);
+    setShowAdvanceFilterModal(false);
+  };
+
   return (
     <>
       <div
@@ -57,48 +76,72 @@ export default function AdvanceFiltersModal({
             </div>
             <div className="modal_body">
               <div className="row">
-                <div className="col-lg-4">
+                <div className="col-lg-6">
                   <div className="filtering_item">
-                    <SingleSelectField
-                      label="Destination"
-                      selectText="Select your country"
-                      zIndex={30}
-                    />
-                  </div>
-                </div>
-                <div className="col-lg-4">
-                  <div className="filtering_item">
-                    <SingleSelectField
-                      label="Popular Type"
-                      selectText="Select your type"
-                      zIndex={20}
-                    />
-                  </div>
-                </div>
-                <div className="col-lg-4">
-                  <div className="filtering_item">
-                    <GuestAndRoomsField />
-                  </div>
-                </div>
-                <div className="col-lg-4">
-                  <div className="filtering_item">
-                    {/* range slider starts */}
                     <div className="filter_title">
                       <h4>Filter By Price</h4>
                     </div>
-                    <RangeSliderField />
-                    {/* range slider ends */}
+                    <RangeSliderField
+                      startRange={priceRange.min}
+                      endRange={priceRange.max}
+                      minRange={priceRange.min}
+                      maxRange={priceRange.max}
+                      onChange={(min, max) => setPriceRange({ min, max })}
+                    />
                   </div>
                 </div>
-                <div className="col-lg-4">
+                <div className="col-lg-6">
+                  <div className="filtering_item">
+                    <div className="filter_title">
+                      <h4>AC/NonAC</h4>
+                    </div>
+                    <CheckboxFields
+                      view="list"
+                      items={[
+                        { label: "AC", value: "A" },
+                        { label: "Non AC", value: "N" },
+                      ]}
+                      checked={[roomType]}
+                      onChecked={(value) =>
+                        setRoomType((oldValue) =>
+                          oldValue == value ? "" : value
+                        )
+                      }
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-6">
+                  <div className="filtering_item">
+                    <div className="filter_title">
+                      <h4>Vromonbilash Ratings</h4>
+                    </div>
+                    <RatingField
+                      activeRatings={vromonbilashRatings}
+                      setActiveRatings={setVromonbilashRatings}
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-6">
+                  <div className="filtering_item">
+                    <div className="filter_title">
+                      <h4>Resort Ratings</h4>
+                    </div>
+                    <RatingField
+                      activeRatings={resortRatings}
+                      setActiveRatings={setResortRatings}
+                    />
+                  </div>
+                </div>
+
+                {/* <div className="col-lg-4">
                   <div className="filtering_item">
                     <div className="filter_title">
                       <h4>Customer Ratings</h4>
                     </div>
                     <RatingField />
                   </div>
-                </div>
-                <div className="col-lg-4">
+                </div> */}
+                {/* <div className="col-lg-4">
                   <div className="filtering_item">
                     <div className="filter_title">
                       <h4>Hotel Types</h4>
@@ -112,7 +155,7 @@ export default function AdvanceFiltersModal({
                       ]}
                     />
                   </div>
-                </div>
+                </div> */}
               </div>
               {/* <div className="btn-toolbar mb-3" role="toolbar">
                 <div className="btn-group btn-group-sm">
@@ -140,121 +183,11 @@ export default function AdvanceFiltersModal({
                 </div>
               </div> */}
               <div className="row">
-                <div className="col-lg-6">
+                {/* <div className="col-lg-6">
                   <h4 id="user" className="listing_view_header">
                     Amenities{" "}
                   </h4>
-                  {/* <div className="btn-toolbar" role="toolbar">
-                    <div className="btn-group btn-group-xs">
-                      <button
-                        type="button"
-                        className="btn btn-defaul_listing t subselectall"
-                      >
-                        Select All
-                      </button>
-                      <button
-                        type="button"
-                        className="btn btn-defaul_listing subclearall"
-                      >
-                        Clear All
-                      </button>
-                    </div>
-                  </div> */}
-                  {/* <br /> */}
-                  {/* <div className="grid_checkbox_list_wrapper d-flex align-items-center">
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="sid"
-                      displayname="SID"
-                    />{" "}
-                    Air Conditioning
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="preferredFirstName"
-                    />{" "}
-                    Room Services
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="currentLastName"
-                    />{" "}
-                    Dining
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="salutation"
-                    />
-                    Caretaker
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="middleInitialOrName"
-                    />{" "}
-                    Free Internet
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="gender"
-                    />
-                    Business Service
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="secondaryEmail"
-                    />
-                    Bonfire
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="secondaryEmail"
-                    />
-                    Mask
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="secondaryEmail"
-                    />
-                    Spa
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="secondaryEmail"
-                    />
-                    Swimming pool
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="secondaryEmail"
-                    />
-                    Fitness Centre
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="secondaryEmail"
-                    />
-                    Bar
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="secondaryEmail"
-                    />
-                    Bonfire
-                    <br />
-                  </div> */}
+
                   <CheckboxFields
                     items={[
                       { label: "Air Conditioning", value: 1 },
@@ -272,123 +205,13 @@ export default function AdvanceFiltersModal({
                       { label: "Bonfire", value: 13 },
                     ]}
                   />
-                </div>
+                </div> */}
                 {/* /.col-lg-6 */}
-                <div className="col-lg-6">
+                {/* <div className="col-lg-6">
                   <h4 id="user" className="listing_view_header">
                     Amenities{" "}
                   </h4>
-                  {/* <div className="btn-toolbar" role="toolbar">
-                    <div className="btn-group btn-group-xs">
-                      <button
-                        type="button"
-                        className="btn btn-defaul_listing t subselectall"
-                      >
-                        Select All
-                      </button>
-                      <button
-                        type="button"
-                        className="btn btn-defaul_listing subclearall"
-                      >
-                        Clear All
-                      </button>
-                    </div>
-                  </div>
-                  <br /> */}
-                  {/* <div className="grid_checkbox_list_wrapper d-flex align-items-center">
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="sid"
-                      displayname="SID"
-                    />{" "}
-                    Air Conditioning
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="preferredFirstName"
-                    />{" "}
-                    Room Services
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="currentLastName"
-                    />{" "}
-                    Dining
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="salutation"
-                    />
-                    Caretaker
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="middleInitialOrName"
-                    />{" "}
-                    Free Internet
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="gender"
-                    />
-                    Business Service
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="secondaryEmail"
-                    />
-                    Bonfire
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="secondaryEmail"
-                    />
-                    Mask
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="secondaryEmail"
-                    />
-                    Spa
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="secondaryEmail"
-                    />
-                    Swimming pool
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="secondaryEmail"
-                    />
-                    Fitness Centre
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="secondaryEmail"
-                    />
-                    Bar
-                    <br />
-                    <input
-                      type="checkbox"
-                      className="checkbox_listing"
-                      id="secondaryEmail"
-                    />
-                    Bonfire
-                    <br />
-                  </div> */}
+
                   <CheckboxFields
                     items={[
                       { label: "Air Conditioning", value: 1 },
@@ -406,21 +229,21 @@ export default function AdvanceFiltersModal({
                       { label: "Bonfire", value: 13 },
                     ]}
                   />
-                </div>
+                </div> */}
                 {/* /.col-lg-6 */}
                 <div className=" col-lg-12 d-flex align-items-center mt-2">
                   <button
                     type="button"
-                    class="check_availability_btn "
-                    onClick={() => setShowAdvanceFilterModal(false)}
+                    className="check_availability_btn "
+                    onClick={() => applyFilters()}
                     style={{ marginTop: "0" }}
                   >
                     Apply Filters
                   </button>
                   <div style={{ marginLeft: "1rem" }}>
-                    <button type="button" className="btn btn-defaul_listing  ">
+                    {/* <button type="button" className="btn btn-defaul_listing  ">
                       Reset filters
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>

@@ -2,12 +2,24 @@ import CheckboxFields from "@/components/theme/form-fields/CheckboxFields";
 import RangeSliderField from "@/components/theme/form-fields/RangeSliderField";
 import RatingField from "@/components/theme/form-fields/RatingField";
 import SingleSelectField from "@/components/theme/form-fields/SingleSelectField";
-import React from "react";
+import { useResortListFiltersContext } from "@/contexts/sections/resorts/ResortListFiltersContext";
+import React, { useState } from "react";
 
 export default function SidebarFilters() {
+  const {
+    vromonbilashRatings,
+    resortRatings,
+    priceRange,
+    roomType,
+    setVromonbilashRatings,
+    setResortRatings,
+    setPriceRange,
+    setRoomType,
+  } = useResortListFiltersContext();
+
   return (
     <div className="resort_list_filtering_sidebar_wrapper">
-      <div className="filtering_item filtering_form_mb">
+      {/* <div className="filtering_item filtering_form_mb">
         <div className="filter_title">
           <h4>Search By Filter</h4>
         </div>
@@ -21,37 +33,58 @@ export default function SidebarFilters() {
       </div>
       <div className="filtering_item ">
         <SingleSelectField label="Popular Type" selectText="Select your type" />
-      </div>
+      </div> */}
 
       <div className="filtering_item">
         <div className="filter_title">
           <h4>Filter By Price</h4>
         </div>
-        <RangeSliderField />
+        <RangeSliderField
+          startRange={priceRange.min}
+          endRange={priceRange.max}
+          minRange={priceRange.min}
+          maxRange={priceRange.max}
+          onChange={(min, max) => setPriceRange({ min, max })}
+        />
       </div>
 
       <div className="filtering_item">
         <div className="filter_title">
-          <h4>Customer Ratings</h4>
+          <h4>Vromonbilash Ratings</h4>
         </div>
-        <RatingField />
+        <RatingField
+          activeRatings={vromonbilashRatings}
+          setActiveRatings={setVromonbilashRatings}
+        />
       </div>
 
       <div className="filtering_item">
         <div className="filter_title">
-          <h4>Hotel Types</h4>
+          <h4>Resort Ratings</h4>
+        </div>
+        <RatingField
+          activeRatings={resortRatings}
+          setActiveRatings={setResortRatings}
+        />
+      </div>
+
+      <div className="filtering_item">
+        <div className="filter_title">
+          <h4>AC/NonAC</h4>
         </div>
         <CheckboxFields
           view="list"
           items={[
-            { label: "Hotel", value: 1 },
-            { label: "Apartment", value: 2 },
-            { label: "Resort", value: 3 },
-            { label: "Vilo", value: 4 },
+            { label: "AC", value: "A" },
+            { label: "Non AC", value: "N" },
           ]}
+          checked={[roomType]}
+          onChecked={(value) =>
+            setRoomType((oldValue) => (oldValue == value ? "" : value))
+          }
         />
       </div>
-      <div className="filtering_item">
+      {/* <div className="filtering_item">
         <div className="filter_title">
           <h4>Amenities</h4>
         </div>
@@ -73,9 +106,9 @@ export default function SidebarFilters() {
             { label: "Bonfire", value: 13 },
           ]}
         />
-      </div>
+      </div> */}
 
-      <div className="filtering_item">
+      {/* <div className="filtering_item">
         <div className="filter_title">
           <h4>Populer Type</h4>
         </div>
@@ -107,7 +140,7 @@ export default function SidebarFilters() {
             </li>
           </ul>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
