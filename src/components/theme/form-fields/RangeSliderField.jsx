@@ -1,3 +1,4 @@
+import { bdPriceFormat } from "@/utils/helpers";
 import { useEffect, useRef, useState } from "react";
 
 export default function RangeSliderField({
@@ -50,9 +51,6 @@ export default function RangeSliderField({
     };
   }, []);
 
-  const numberFormat = (number) =>
-    number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
   return (
     <>
       <div ref={sliderRef} className="slider-range mt-3" />
@@ -60,11 +58,11 @@ export default function RangeSliderField({
         <div className="price_range_count d-flex">
           <span>Price: </span>
           <div className="caption">
-            <span className="slider-range-value1">৳{numberFormat(min)}</span>
+            <span className="slider-range-value1">৳{bdPriceFormat(min)}</span>
           </div>
           <span>to</span>
           <div className="text-right caption">
-            <span className="slider-range-value2">৳{numberFormat(max)}</span>
+            <span className="slider-range-value2">৳{bdPriceFormat(max)}</span>
           </div>
         </div>
         {/* <div className="price_apply_btn">

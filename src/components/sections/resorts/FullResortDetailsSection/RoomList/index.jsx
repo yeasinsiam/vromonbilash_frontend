@@ -2,8 +2,8 @@ import React from "react";
 import RoomItem from "./RoomItem";
 
 export default function RoomList({
+  resortData,
   setShowRoomListAdvanceFilterModal,
-  setShowSelectRoomAndGuestModal,
   setShowMoreDetailsModal,
 }) {
   return (
@@ -20,22 +20,15 @@ export default function RoomList({
         </button>
         {/*------------ Room Advance Search Filter End-------------*/}
       </div>
-      {/* Room Item  */}
-      <RoomItem
-        {...{ setShowSelectRoomAndGuestModal, setShowMoreDetailsModal }}
-      />
-      <RoomItem
-        {...{ setShowSelectRoomAndGuestModal, setShowMoreDetailsModal }}
-      />
-      <RoomItem
-        {...{ setShowSelectRoomAndGuestModal, setShowMoreDetailsModal }}
-      />
-      <RoomItem
-        {...{ setShowSelectRoomAndGuestModal, setShowMoreDetailsModal }}
-      />
-      <RoomItem
-        {...{ setShowSelectRoomAndGuestModal, setShowMoreDetailsModal }}
-      />
+      {resortData.room_categories.map((roomCategory) => (
+        <RoomItem
+          key={roomCategory.slug}
+          {...{
+            roomCategory,
+            setShowMoreDetailsModal,
+          }}
+        />
+      ))}
 
       {/* Room Item  */}
       <button className="check_availability_btn w-100 mt-5" type="button">

@@ -11,7 +11,7 @@ import ecoPng from "@/assets/static/media/eco.png";
 import { faLocationDot, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ThemeImage from "@/components/theme/ThemeImage";
-import { setConditionalClassName } from "@/utils/helpers";
+import { bdPriceFormat, setConditionalClassName } from "@/utils/helpers";
 import Link from "next/link";
 
 export default function ResortListItem({ resort, view = "grid" }) {
@@ -115,9 +115,7 @@ export default function ResortListItem({ resort, view = "grid" }) {
           <div className="rl_rating">
             {Boolean(averageRating) && (
               <span>
-                <i className="fa-solid fa-star" />
                 <FontAwesomeIcon icon={faStar} />
-
                 <small>{averageRating}</small>
               </span>
             )}
@@ -155,10 +153,10 @@ export default function ResortListItem({ resort, view = "grid" }) {
             <h1>
               <span className="reguler_price">
                 <b>৳ </b>
-                {resort.regular_price}
+                {bdPriceFormat(resort.regular_price)}
               </span>{" "}
               <b>৳ </b>
-              {resort.sale_price} <span>/Night</span>
+              {bdPriceFormat(resort.sale_price)} <span>/Night</span>
             </h1>
           </div>
           <div className="resort_view_more_btn">

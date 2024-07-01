@@ -232,6 +232,10 @@
   top: 5.5rem;
 }
 
+.resort_details_sub_title {
+  margin-top: 0rem;
+}
+
 /* Calender  */
 .checkin-checkout-calender {
   padding: 0px 10px;

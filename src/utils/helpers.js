@@ -46,3 +46,7 @@ export const makeId = (length) => {
   }
   return result;
 };
+
+export function bdPriceFormat(number) {
+  return parseFloat(number).toLocaleString("en-IN");
+}
